@@ -1,0 +1,211 @@
+VERSION 120
+EDIT UG_GATEWAY_MAIN_MENUBAR
+BEFORE UG_HELP
+
+CASCADE_BUTTON BATCH_TOOLS_CASCADE
+LABEL NX tools
+
+END_OF_BEFORE
+
+MENU BATCH_TOOLS_CASCADE
+	CASCADE_BUTTON HTET_COLOR_CASCADE
+	LABEL Colors
+	CASCADE_BUTTON HTET_DISPLAY_CASCADE
+	LABEL Display
+	CASCADE_BUTTON HTET_LAYER_CASCADE
+	LABEL Layers
+	CASCADE_BUTTON HTET_DRAW_CASCADE
+	LABEL Drawing
+	CASCADE_BUTTON HTET_APP_CASCADE
+	LABEL Utilities
+END_OF_MENU
+
+MENU HTET_COLOR_CASCADE
+	BUTTON Htet_red
+	LABEL Red
+	MESSAGE Change selected bodies to red
+	BITMAP Htet_red.bmp
+	ACTIONS Htet_bodysColor186.py
+
+	BUTTON Htet_black
+	LABEL Black
+	MESSAGE Change selected bodies to black
+	BITMAP Htet_black.bmp
+	ACTIONS Htet_bodysColor216.py
+
+	BUTTON Htet_yellow
+	LABEL Yellow
+	MESSAGE Change selected bodies to yellow
+	BITMAP Htet_yellow.bmp
+	ACTIONS Htet_bodysColor6.py
+
+	BUTTON Htet_blue
+	LABEL Blue
+	MESSAGE Change selected bodies to blue
+	BITMAP Htet_blue.bmp
+	ACTIONS Htet_bodysColor211.py
+
+	BUTTON Htet_brown
+	LABEL Brown
+	MESSAGE Change selected bodies to brown
+	BITMAP Htet_brown.bmp
+	ACTIONS Htet_bodysColor125.py
+
+	BUTTON Htet_gray
+	LABEL Gray
+	MESSAGE Change selected bodies to gray
+	BITMAP Htet_gray.bmp
+	ACTIONS Htet_bodysColor44.py
+
+	BUTTON Htet_green
+	LABEL Green
+	MESSAGE Change selected bodies to green
+	BITMAP Htet_green.bmp
+	ACTIONS Htet_bodysColor36.py
+
+	BUTTON Htet_orange
+	LABEL Orange
+	MESSAGE Change selected bodies to orange
+	BITMAP Htet_orange.bmp
+	ACTIONS Htet_bodysColor78.py
+
+	BUTTON Htet_purple
+	LABEL Purple
+	MESSAGE Change selected bodies to purple
+	BITMAP Htet_purple.bmp
+	ACTIONS Htet_bodysColor164.py
+
+	BUTTON Htet_random
+	LABEL Random colors
+	MESSAGE Assign random colors to selected bodies
+	BITMAP Htet_random.bmp
+	ACTIONS Htet_Randomcolor.py
+END_OF_MENU
+
+MENU HTET_DISPLAY_CASCADE
+	BUTTON Htet_displayonly
+	LABEL Show selected only
+	MESSAGE Hide all other objects and show only the selection
+	BITMAP Htet_displayonly.bmp
+	ACTIONS Htet_Displayonly.py
+
+	BUTTON Htet_transparent
+	LABEL Translucent
+	MESSAGE Make selected bodies translucent
+	BITMAP Htet_transparent.bmp
+	ACTIONS Htet_transparent.py
+
+	BUTTON Htet_notransparent
+	LABEL Opaque
+	MESSAGE Make selected bodies fully opaque again
+	BITMAP Htet_notransparent.bmp
+	ACTIONS Htet_Notransparent.py
+END_OF_MENU
+
+MENU HTET_LAYER_CASCADE
+	BUTTON Htet_layers
+	LABEL One body per layer
+	MESSAGE Put each body on its own layer
+	BITMAP Htet_layers.bmp
+	ACTIONS Htet_Separatelayer.py
+
+	BUTTON Htet_worklayer
+	LABEL Layer 10 as work layer
+	MESSAGE Set layer 10 as the work layer
+	BITMAP Htet_worklayer.bmp
+	ACTIONS Htet_Switch10worklayer.py
+
+	BUTTON Htet_worklayer200
+	LABEL Layer 200 as work layer
+	MESSAGE Set layer 200 as the work layer
+	BITMAP Htet_Switch200worklayer.bmp
+	ACTIONS Htet_Switch200worklayer.py
+
+	BUTTON Htet_hidealllayers
+	LABEL Hide all layers
+	MESSAGE Hide every layer except the work layer
+	BITMAP Htet_Hidealllayers.bmp
+	ACTIONS Htet_Hidealllayers.py
+
+	BUTTON Htet_showalllayers
+	LABEL Show all layers
+	MESSAGE Show all layers (non-work layers become visible and selectable)
+	BITMAP Htet_Showalllayers.bmp
+	ACTIONS Htet_Showalllayers.py
+
+	BUTTON Htet_nextlayer
+	LABEL Next layer
+	MESSAGE Move to the next populated layer (higher number, skipping empty layers)
+	BITMAP Htet_Nextlayer.bmp
+	ACTIONS Htet_Nextlayer.py
+
+	BUTTON Htet_previouslayer
+	LABEL Previous layer
+	MESSAGE Move to the previous populated layer (lower number, skipping empty layers)
+	BITMAP Htet_Previouslayer.bmp
+	ACTIONS Htet_Previouslayer.py
+
+	BUTTON Htet_movetolayer255
+	LABEL Move to layer 255
+	MESSAGE Move selected objects to layer 255
+	BITMAP Htet_Movetolayer255.bmp
+	ACTIONS Htet_Movetolayer255.py
+END_OF_MENU
+
+MENU HTET_DRAW_CASCADE
+	BUTTON Htet_batch
+	LABEL Auto drawing
+	MESSAGE Generate three views and dimensions for selected bodies on one sheet
+	BITMAP Htet_batch.bmp
+	ACTIONS Htet_autodwg.py
+
+	BUTTON Htet_stepwise
+	LABEL Draw One by One
+	MESSAGE Show one body at a time for manual drafting
+	BITMAP Htet_batch.bmp
+	ACTIONS Htet_export_body01.py
+
+	BUTTON Htet_reset
+	LABEL Reset drawing task
+	MESSAGE Clear the step-by-step drawing progress
+	BITMAP Htet_reset.bmp
+	ACTIONS Htet_reset_task.py
+END_OF_MENU
+
+MENU HTET_APP_CASCADE
+	BUTTON Htet_openfolder
+	LABEL Open containing folder
+	MESSAGE Open the folder of the current part in File Explorer
+	BITMAP Htet_Openfilefolder.bmp
+	ACTIONS Htet_Openfilefolder.py
+
+	BUTTON Htet_sniptool
+	LABEL Screenshot
+	MESSAGE Capture a view region and copy it to the clipboard
+	BITMAP Htet_Sniptool.bmp
+	ACTIONS Htet_Sniptool.vb
+
+	BUTTON Htet_tolerance
+	LABEL Tolerance lookup
+	MESSAGE Open the tolerance lookup program (GongCha.exe)
+	BITMAP Htet_Toleranceexe.bmp
+	ACTIONS Htet_Toleranceexe.py
+
+	BUTTON Htet_calculator
+	LABEL Calculator
+	MESSAGE Open the calculator
+	BITMAP Htet_Calculatoropen.bmp
+	ACTIONS Htet_Calculatoropen.py
+
+	BUTTON Htet_quickhole
+	LABEL Quick hole
+	MESSAGE Quickly drill a through/blind hole, counterbore or slot on a planar face
+	BITMAP Htet_hole.bmp
+	ACTIONS Quickhole.py
+
+	BUTTON Htet_screw
+	LABEL Add Screw
+	MESSAGE Quickly add socket-head, countersunk or round-head screws on a planar face
+	BITMAP ..\bitmap\nx_screw_insert_ui.bmp
+	ACTIONS nx_screw_insert_ui.py
+END_OF_MENU

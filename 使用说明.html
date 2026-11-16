@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NX便捷功能包 使用说明（2D 出图 · 快捷打孔 · 常用工具 · 格式转换）</title>
+<style>
+:root{--ink:#1d2733;--ink-soft:#465565;--line:#dde4ec;--line-soft:#eaeff5;--bg:#eef1f5;--brand:#16588e;--brand-deep:#0f3f68;--brand-soft:#eaf2fa;--accent:#b4761f;--ok:#1f7a53;--warn:#a35a12;--danger:#a3312b}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;padding:34px 16px 64px;background:radial-gradient(1200px 460px at 15% -10%,#e3ebf5 0%,rgba(227,235,245,0) 62%),var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.78}.page{max-width:1060px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 18px 48px rgba(22,45,72,.10),0 2px 6px rgba(22,45,72,.05);overflow:hidden}.cover{padding:46px 58px 38px;background:linear-gradient(135deg,#0f3f68 0%,#16588e 58%,#1d6aa8 100%);color:#fff;position:relative}.cover::after{content:"";position:absolute;right:-70px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.055)}.cover .kicker{font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:#a9c8e3;margin:0 0 12px}.cover h1{margin:0 0 10px;font-size:33px;line-height:1.32;font-weight:700;letter-spacing:.5px}.cover .sub{margin:0;color:#cfe0ef;font-size:15px}.chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eaf3fb;font-size:12.5px;letter-spacing:.3px;padding:5px 12px;border-radius:999px}.chip b{font-weight:600;color:#fff}.body{padding:40px 58px 54px}.abstract{border:1px solid #cfe0ef;border-left:4px solid var(--brand);background:linear-gradient(180deg,#f5f9fd,#f2f7fc);padding:18px 22px;border-radius:4px;margin:0 0 34px;color:var(--ink-soft);font-size:14.5px}.abstract p{margin:0 0 8px}.abstract p:last-child{margin-bottom:0}.toc{border:1px solid var(--line);border-radius:4px;padding:22px 26px;margin:0 0 44px;background:#fbfcfe}.toc h2{margin:0 0 14px;font-size:14px;letter-spacing:.18em;color:var(--brand);border:0;padding:0}.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:44px;font-size:14px}.toc li{margin:0 0 7px;break-inside:avoid}.toc a{color:var(--ink-soft);text-decoration:none}.toc a:hover{color:var(--brand)}.toc .n{color:#9aa9b9;display:inline-block;width:26px}h2{font-size:21px;line-height:1.4;font-weight:700;margin:52px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line);color:var(--brand-deep)}h2 .no{display:inline-block;min-width:30px;height:30px;line-height:30px;text-align:center;background:var(--brand);color:#fff;border-radius:4px;font-size:14px;margin-right:12px;vertical-align:2px}h3{font-size:16.5px;font-weight:700;margin:30px 0 10px;color:var(--ink);padding-left:11px;border-left:3px solid #9dc0dd}p{margin:0 0 12px}ul,ol{margin:0 0 14px;padding-left:24px}li{margin:0 0 6px}li::marker{color:#8aa4bb}strong{font-weight:700;color:#152232}code{font-family:"Cascadia Mono",Consolas,"SF Mono",Menlo,monospace;font-size:13px;background:#f2f5f9;border:1px solid #e3eaf2;border-radius:3px;padding:1px 5px;color:#24486b;white-space:nowrap}.path{font-family:"Cascadia Mono",Consolas,monospace;font-size:13px;color:#3d5a75;word-break:break-all}table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px}thead th{background:#eef4fa;color:#1b3c5a;font-weight:700;text-align:left;padding:10px 12px;border:1px solid var(--line);white-space:nowrap}tbody td{padding:9px 12px;border:1px solid var(--line-soft);vertical-align:top;color:var(--ink-soft)}tbody tr:nth-child(even) td{background:#fbfcfe}tbody td:first-child{color:var(--ink);font-weight:600}table.compact td,table.compact th{padding:7px 10px;font-size:13.5px}.note,.warn,.tip{border-radius:4px;padding:13px 18px 13px 18px;margin:16px 0 20px;font-size:14px;line-height:1.72;border:1px solid}.note{background:#f4f8fd;border-color:#cfe0ef;border-left:4px solid var(--brand)}.warn{background:#fdf7ee;border-color:#eeddbf;border-left:4px solid var(--warn)}.tip{background:#f2f9f5;border-color:#cce6d8;border-left:4px solid var(--ok)}.note b,.warn b,.tip b{display:inline-block;margin-right:6px}.note b{color:var(--brand)}.warn b{color:var(--warn)}.tip b{color:var(--ok)}.tree{font-family:"Cascadia Mono",Consolas,monospace;font-size:13.5px;line-height:2;background:#f7f9fc;border:1px solid var(--line);border-radius:4px;padding:16px 22px;margin:14px 0 20px;color:#2b4256}.tree .lvl2{padding-left:26px}.tree .lvl3{padding-left:58px;color:#5a7288}.tree em{font-style:normal;color:#8b9cac;font-size:12px;margin-left:8px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 24px}.card{border:1px solid var(--line);border-radius:4px;padding:15px 18px;background:#fcfdfe}.card h4{margin:0 0 6px;font-size:14.5px;color:var(--brand-deep)}.card p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.7}.footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:#8494a5;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media (max-width:820px){body{padding:14px 8px 40px}.cover{padding:32px 26px 28px}.cover h1{font-size:25px}.body{padding:28px 24px 40px}.toc ol{columns:1}.cards{grid-template-columns:1fr}table{font-size:13px}}@media print{@page{size:A4;margin:15mm 13mm}body{background:#fff;padding:0;font-size:10.5pt;line-height:1.62}.page{border:0;box-shadow:none;border-radius:0;max-width:none}.cover{padding:22mm 14mm 12mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}.body{padding:6mm 2mm 0}h2{page-break-after:avoid;margin-top:8mm}h3{page-break-after:avoid}table{page-break-inside:auto}tr{page-break-inside:avoid}thead{display:table-header-group}.note,.warn,.tip,.tree,.card{page-break-inside:avoid}a{color:inherit;text-decoration:none}.toc{page-break-after:always}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <p class="kicker">NX 2506 · Plugin Manual</p>
+    <h1>NX便捷功能包 使用说明</h1>
+    <p class="sub">一个工具包 · 单一模块目录 <code>NX工具</code>：二维出图 · 快捷打孔 · 颜色与图层 · 常用工具 · 格式转换</p>
+    <div class="chips">
+      <span class="chip">NX便捷功能包 <b>v3.4.0</b></span>
+      <span class="chip">合并模块 <b>NX工具</b></span>
+      <span class="chip">Htet 2.5.1 + 格式转换 2.1.5</span>
+      <span class="chip">更新日期 <b>2026-11-15</b></span>
+      <span class="chip">制作者 <b>Wong、Htet、Limulu</b></span>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <div class="abstract">
+      <p>本说明覆盖一个工具包、一个模块目录 <code>NX工具</code>：二维出图、快捷打孔、颜色/显示/图层快捷操作、截图/公差查询/计算器等常用工具，以及格式转换（prt / step / igs / x_t 五种方向互转，含 stp / igs / x_t 批量导入为 .prt）。全部功能共用同一个顶层菜单「NX 工具」（English 界面为 <code>NX tools</code>）与同一个功能区选项卡；v3.3.6 起两个原模块的目录已合并为 <code>NX工具</code>，只装一个目录、只写 <code>custom_dirs.dat</code> 一行。</p>
+      <p>共同原则：<strong>不改原 .prt、不删用户图纸</strong>；覆盖既有产物前先把原文件备份为同名 <code>.bak</code>（见第 8 节「覆盖与 .bak 备份」）；导入 STEP/IGES/Parasolid 会另存为源目录下的 <code>.prt</code>（<code>.prt</code> 源仅打开、不另存）。执行结束后恢复原来的显示部件、工作部件与部件打开状态。</p>
+    </div>
+
+    <nav class="toc">
+      <h2>目 录</h2>
+      <ol>
+        <li><span class="n">00</span><a href="#preinstall">安装前必读</a></li>
+        <li><span class="n">01</span><a href="#s1">工具概览</a></li>
+        <li><span class="n">02</span><a href="#s2">安装与升级</a></li>
+        <li><span class="n">03</span><a href="#s3">菜单结构</a></li>
+        <li><span class="n">04</span><a href="#s4">界面语言</a></li>
+        <li><span class="n">05</span><a href="#s5">自动出图</a></li>
+        <li><span class="n">06</span><a href="#s6">逐件出图</a></li>
+        <li><span class="n">07</span><a href="#s7">颜色 / 显示 / 图层</a></li>
+        <li><span class="n">08</span><a href="#s8">格式转换</a></li>
+        <li><span class="n">09</span><a href="#s9">不同状态下的导出行为</a></li>
+        <li><span class="n">10</span><a href="#s10">旧版本兼容</a></li>
+        <li><span class="n">11</span><a href="#s11">日志与临时文件</a></li>
+        <li><span class="n">12</span><a href="#s12">已知限制</a></li>
+        <li><span class="n">13</span><a href="#s13">常见问题</a></li>
+        <li><span class="n">14</span><a href="#s14">可调配置</a></li>
+        <li><span class="n">15</span><a href="#s15">文件清单</a></li>
+        <li><span class="n">16</span><a href="#s16">卸载</a></li>
+        <li><span class="n">17</span><a href="#s17">更新记录</a></li>
+      </ol>
+    </nav>
+
+    <!-- ============ 0 ============ -->
+    <h2 id="preinstall"><span class="no">00</span>安装前必读</h2>
+    <ol>
+      <li><strong>菜单语言自动选。</strong>按系统界面语言选（简体→简中、繁中→繁中、其他→英文），系统显示不了时自动退英文、不会写出乱码；英文系统为纯 ASCII 无编码风险，但自 v3.1.6 后未做近期真机验证。</li>
+      <li><strong>改过系统区域要先重启。</strong>调整过「非 Unicode 程序的语言」后请重启再安装，否则 NX 可能按旧编码读菜单而显示乱码。</li>
+      <li><strong>一台电脑只留一份。</strong>装新版前先卸载旧版；两份已注册目录会互相覆盖菜单，安装器只告警、不阻断。</li>
+      <li><strong>别手动指定不匹配的语言。</strong>如繁中系统上用 <code>-Lang zh_cn</code>：会按严格模式校验并列出缺字，不会写入半截乱码。</li>
+      <li><strong>先解压到固定文件夹再装。</strong>解压后要能同时看到 <code>install.bat</code> 和 <code>NX工具\</code> 目录，不要在压缩包里直接双击，也不要解压到临时目录或下载目录：安装器不复制文件，<strong>包解到哪里，哪里就是安装目录</strong>，解到临时路径重启后会被清掉、菜单随之失效。</li>
+      <li><strong>装在受保护目录要管理员运行。</strong>NX 位于 <code>C:\Program Files</code> 这类受保护目录时，请右键安装器选「以管理员身份运行」，否则写注册文件会因权限不足失败。</li>
+    </ol>
+
+    <!-- ============ 1 ============ -->
+    <h2 id="s1"><span class="no">01</span>工具概览</h2>
+    <table>
+      <thead>
+        <tr><th style="width:22%">功能</th><th style="width:26%">入口</th><th>做什么</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>自动出图</td><td>NX 工具 → 出图 → 自动出图</td><td>多选实体，每个实体生成三视图并在同一张图纸上横向排列，自动标注长/宽/厚。</td></tr>
+        <tr><td>逐件出图</td><td>NX 工具 → 出图 → 逐件出图</td><td>每次只显示一个实体，手工摆位标注，再运行切下一个。</td></tr>
+        <tr><td>快捷打孔</td><td>NX 工具 → 常用工具 → 快捷打孔</td><td>选平面，添加孔中心，批量打普通腰孔或台阶沉头腰孔。</td></tr>
+        <tr><td>添加螺钉</td><td>NX 工具 → 常用工具 → 添加螺钉</td><td>在平面上快速放置内六角圆柱头、沉头或圆头螺钉；尺寸跟随所选规格，按工作零件毫米制生成。</td></tr>
+        <tr><td>颜色与显示</td><td>NX 工具 → 颜色 → 红 / 黑 / 黄 / 蓝 / 棕 / 灰 / 绿 / 橙 / 紫 / 随机改色；NX 工具 → 显示 → 设为半透明 / 取消透明 / 仅显示选中实体</td><td>九种固定色、随机上色、半透明与恢复不透明；不选则弹选择框。</td></tr>
+        <tr><td>图层整理</td><td>NX 工具 → 图层 → 一个体一个层 / 10为工作层 / 200为工作层 / 关闭全部图层 / 打开全部图层 / 下一图层 / 上一图层 / 移到255层</td><td>每实体一层、快速显隐全部图层、按有物体图层上下切换、批量移到 255 层。</td></tr>
+        <tr><td>常用工具</td><td>NX 工具 → 常用工具 → 打开文件所在文件夹 / 截图工具 / 公差查询 / 计算器</td><td>打开零件目录、截取视图区域到剪贴板、启动公差查询手册与计算器。</td></tr>
+        <tr><td>格式转换</td><td>NX 工具 → 常用工具 → 格式转换（工具条：NX 工具 → 导入导出）</td><td>5 个方向：prt→stp、prt→igs、stp/igs→prt、x_t/x_b→prt、任意→stp/igs（另有 x_t→stp、x_t→igs 细分）；选文件 → 预览 → 导出，支持同名策略、输出目录、只导可见层、并发 1~6。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>快捷打孔用法</h3>
+    <ol>
+      <li>入口：<strong>NX 工具 → 常用工具 → 快捷打孔</strong>（工具条同）。打开当前工作零件的实体。</li>
+      <li>选一个<strong>平面</strong>作为孔入口面，再用「孔中心」指定点；点会自动投影到该平面。</li>
+      <li>选孔型：普通腰孔 / 台阶沉头腰孔；端型：通孔 / 盲孔。腰孔填两端圆心距与方向角。</li>
+      <li>可直接选 M3–M12 螺钉规格自动带出孔径与深度，或选「自定义」手填。</li>
+      <li>可连续指定点（或点草图入口在入口平面画点），右侧显示已选点数；点「应用」一次打完。方向不对时勾「反转方向」。</li>
+    </ol>
+    <p>仅支持平面入口与当前工作零件的实体；应用前校验孔中心与腰孔两端在实体内，失败自动回退本次减料。</p>
+
+    <h3>添加螺钉用法</h3>
+    <ol>
+      <li>入口：<strong>NX 工具 → 常用工具 → 添加螺钉</strong>（工具条同）。打开当前工作零件。</li>
+      <li>选一个<strong>平面</strong>作为螺钉支承面，再指定螺钉位置点；点会自动投影到该平面。</li>
+      <li>选规格（M3–M12 或自定义）、头型（圆柱头 / 沉头 / 圆头）与是否通孔；预览确认后点「应用」。</li>
+      <li>可连续添加多个位置；方向不对时勾「反转方向」。</li>
+    </ol>
+    <div class="warn"><b>换机 / 手工拷贝必看</b>「添加螺钉」与「腰型孔参数化特征」依赖 <code>application\CustomFeatureConfiguration.xml</code>。该文件必须留在 <code>NX工具\application\</code> 下（即 <code>$UGII_USER_DIR\application\</code>）；只拷 <code>startup\</code> 或漏掉这个 XML，NX 启动时不会注册自定义特征，按钮点了会没反应或报「找不到特征类」。用安装器安装时无需手工处理。</div>
+
+    <!-- ============ 2 ============ -->
+    <h2 id="s2"><span class="no">02</span>安装与升级</h2>
+    <p>本包为<strong>一个安装入口 · 一个模块目录 <code>NX工具</code></strong>：双击根目录的图形安装器 <code>NX便捷功能包.exe</code>，只选一次 NX 目录、定一次界面语言；安装器只向 <code>custom_dirs.dat</code> 追加<strong>一行</strong>（指向 <code>&lt;包根&gt;\NX工具</code>），不再询问或分别安装子模块。</p>
+    <table>
+      <thead>
+        <tr><th style="width:24%">入口 / 场景</th><th style="width:38%">安装方式</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>整包（推荐）</td><td>双击根目录 <code>NX便捷功能包.exe</code>，选目录后点「安装插件」</td><td>安装、升级、卸载都只用这一种方式</td></tr>
+        <tr><td>无图形界面 / 批处理</td><td>双击根目录 <code>install.bat</code></td><td>与图形安装器同一套逻辑，供脚本或远程环境使用</td></tr>
+      </tbody>
+    </table>
+    <h3>安装步骤</h3>
+    <ol>
+      <li>解压发布包，保持 <code>NX便捷功能包.exe</code>、<code>install.bat</code>、<code>install.ps1</code> 与 <code>NX工具\</code> 同处（exe 单独拷走会提示「找不到 install.ps1」）。</li>
+      <li><strong>双击根目录 <code>NX便捷功能包.exe</code></strong>，选择含 <code>UGII</code> 的那一层（如 <span class="path">D:\NX2506</span>），点「安装插件」。无图形环境时改用根目录 <code>install.bat</code>。</li>
+      <li>界面语言随系统/<code>UGII_LANG</code> 自动判定（简体 / 繁体 / English），默认简体中文。</li>
+      <li>看到安装成功提示后<strong>重启 NX</strong>（菜单与功能区只在启动时加载）。</li>
+    </ol>
+    <h3>从 v3.3.5（含更早）升级</h3>
+    <ol>
+      <li>把 v3.3.8 包解压到<strong>新的最终位置</strong>（建议新目录，避免覆盖仍在使用的旧包）。</li>
+      <li>运行新包根目录的 <code>NX便捷功能包.exe</code>（或 <code>install.bat</code>），选同一个 NX 安装目录，点「安装插件」。</li>
+      <li>安装器会自动：追加 <code>NX工具</code> 一行 → 摘掉旧的 <code>Htet工具</code> / <code>格式转换</code> 两行 → 按当前码页重写语言资源。旧的两个模块目录<strong>原地保留、不删任何用户文件</strong>。</li>
+      <li>如果新包与旧包在同一个父目录（如都在 <span class="path">D:\NX2506\NX便捷功能包</span>），安装器会直接移除旧两行；升级完成后旧目录 <code>Htet工具\</code>、<code>格式转换\</code> 可手动移走或删除（其中 <code>logs\</code> 等用户产物请先自行备份）。</li>
+      <li>重启 NX 验证「NX 工具」菜单 31 项与功能区 6 组按钮；确认无误后再清理旧目录。</li>
+    </ol>
+    <div class="tip"><b>包根即安装目录</b>安装器只写注册文件、不改动包内文件，所以 <code>install.bat</code> 所在目录就是安装目录：要先解压到最终位置，再在该目录运行安装器。</div>
+    <div class="tip"><b>旧版清理</b>安装前会自动识别并移除可识别的旧包注册行（叶子名为 <code>Htet工具</code> / <code>格式转换</code> / <code>批量导入导出</code> / <code>nx tools</code> / <code>nx_step_export</code> / <code>NX便捷功能包</code>，或其 <code>startup\</code> 下含本工具包菜单文件的行），只删注册行，目录与其他行原样保留。</div>
+    <h3>安装器改了什么</h3>
+    <ul>
+      <li>只向 <span class="path">&lt;NX&gt;\UGII\menus\custom_dirs.dat</span> 追加<strong>一行</strong> <code>&lt;包根&gt;\NX工具</code>，不动其它行；写前备份 <code>.nxbat.bak</code>，写后恢复只读，界面显示前后字节数与 SHA256；重复安装幂等（已存在则不重复写入）。</li>
+      <li>按所选语言把 <code>NX工具\lang\</code> 下的菜单/工具条/功能区母本按当前码页转码写入 <code>startup\</code> 与 <code>application\profiles\All\NX_tools.rtb</code>（六组合并为单一选项卡），并做读回自检；<code>application\</code> 下的 <code>.py</code> / <code>.vb</code> 与对话框、螺钉图标一并部署到 <code>startup\</code>。</li>
+      <li><code>UGII_USER_DIR</code> 为空时设为插件根 <code>NX工具</code>，写 <code>install_env_state.json</code> 记录原值，卸载时删除或恢复；已指向别处则不覆盖、只告警。若原值指向本插件的历史副本（旧的 <code>Htet工具</code> 目录），则自动接管。</li>
+    </ul>
+    <div class="warn"><b>注意</b>其它安装器可能把 <code>custom_dirs.dat</code> 整份还原成模板、抹掉本插件的行；<strong>重跑本插件安装器</strong>即可补回，不必卸载重装。</div>
+    <p>安装日志见第 11 节（追加写入，卸载不删）。</p>
+
+    <!-- ============ 3 ============ -->
+    <h2 id="s3"><span class="no">03</span>菜单结构</h2>
+    <p>插件菜单挂在 NX 左侧菜单竖列的「帮助」之前（<code>BEFORE UG_HELP</code>），<strong>不在「文件」下拉里</strong>；v3.3.0 起只有<strong>一个</strong>顶层菜单「NX 工具」（English 界面为 <code>NX tools</code>），下面平铺五组，不再有「htet工具 / 批量文件」两级：</p>
+    <div class="tree">
+      NX 工具　<em>BATCH_TOOLS_CASCADE</em>（English：NX tools）<br>
+      <span class="lvl2">├─ 颜色　<em>HTET_COLOR_CASCADE · 10 项</em></span><br>
+      <span class="lvl3">红色 / 黑色 / 黄色 / 蓝色 / 棕色 / 灰色 / 绿色 / 橙色 / 紫色 / 随机改色</span><br>
+      <span class="lvl2">├─ 显示　<em>HTET_DISPLAY_CASCADE · 3 项</em></span><br>
+      <span class="lvl3">仅显示选中实体 / 设为半透明 / 取消透明</span><br>
+      <span class="lvl2">├─ 图层　<em>HTET_LAYER_CASCADE · 8 项</em></span><br>
+      <span class="lvl3">一个体一个层 / 10为工作层 / 200为工作层 / 关闭全部图层 / 打开全部图层 / 下一图层 / 上一图层 / 移到255层</span><br>
+      <span class="lvl2">├─ 出图　<em>HTET_DRAW_CASCADE · 3 项</em></span><br>
+      <span class="lvl3">自动出图 / 逐件出图 / 重置出图任务</span><br>
+      <span class="lvl2">└─ 常用工具　<em>HTET_APP_CASCADE · 7 项</em></span><br>
+      <span class="lvl3">打开文件所在文件夹 / 截图工具 / 公差查询 / 计算器 / 快捷打孔 / 添加螺钉 / 格式转换</span>
+    </div>
+    <p>五组固定按 颜色 → 显示 → 图层 → 出图 → 常用工具 排列，共 <strong>31 项</strong>；「格式转换」自 v3.3.0 起并入常用工具组，不再有独立的「批量文件」级联。v3.3.6 合并目录后，全部 31 项一次性可用，不再有按模块分别安装的差异。</p>
+    <table>
+      <thead>
+        <tr><th style="width:24%">位置</th><th style="width:20%">简体中文</th><th style="width:20%">繁体中文</th><th>English</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>顶层菜单</td><td>NX 工具</td><td>NX 工具</td><td>NX tools</td></tr>
+        <tr><td>组名</td><td>颜色 / 显示 / 图层 / 出图 / 常用工具</td><td>顏色 / 顯示 / 圖層 / 出圖 / 常用工具</td><td>Colors / Display / Layers / Drawing / Utilities</td></tr>
+        <tr><td>常用工具项</td><td>打开文件所在文件夹 / 截图工具 / 公差查询 / 计算器 / 快捷打孔 / 添加螺钉 / 格式转换</td><td>打開文件所在文件夾 / 截圖工具 / 公差查詢 / 計算器 / 快捷打孔 / 添加螺釘 / 格式轉換</td><td>Open containing folder / Screenshot / Tolerance lookup / Calculator / Quick hole / Add screw / Format Convert</td></tr>
+        <tr><td>出图项</td><td>自动出图 / 逐件出图 / 重置出图任务</td><td>自動出圖 / 逐件出圖 / 重置出圖任務</td><td>Auto drawing / Draw one by one / Reset drawing task</td></tr>
+        <tr><td>格式转换</td><td>格式转换</td><td>格式轉換</td><td>Format Convert</td></tr>
+      </tbody>
+    </table>
+    <p><strong>功能区选项卡</strong>：NX 功能区（ribbon）上有一个独立的「NX 工具」选项卡（English 界面为 <code>NX tools</code>），切过去后是六组——颜色 / 显示 / 图层 / 出图 / 应用模块 / 导入导出，共 <strong>31 个按钮</strong>，与菜单一一对应；「导入导出」组内为 格式转换、打开文件所在文件夹（后者只在功能区归到此组，菜单仍在 常用工具 下），「应用模块」组为 截图工具、公差查询、计算器、快捷打孔、添加螺钉；出图的自动 / 逐件两个按钮共用一张图标，格式转换沿用 <code>step_export.bmp</code>。</p>
+    <p>该选项卡由<strong>单个文件</strong> <code>Htet工具\application\profiles\All\NX_tools.rtb</code> 定义（六组全部写在这一个文件里；两个模块各出一个 <code>.rtb</code> 即使 TITLE 相同也<strong>不会</strong>合并，会出现两个同名选项卡，所以安装器会把两边的组合并后只写这一份）。NX 只在<strong>启动时</strong>扫描 <code>application\profiles\All\</code> 下的 <code>.rtb</code>，放在 <code>application\</code> 根下或 <code>startup\</code> 里的 <code>.tbr</code> 都不会生成选项卡，因此装完或升级后<strong>必须完全退出并重启 NX</strong>；正常情况重启即出现，若仍看不到，右键功能区空白处 →「定制功能区」→ 勾选「NX 工具」→ 确定。</p>
+    <div class="tip"><b>命名约定</b>界面显示名为「NX 工具 / NX tools」；脚本、按钮 ID、图标名保持 <code>Htet_*</code> 不变（快捷打孔沿用 <code>Quickhole.py</code> / <code>Quickhole.dlx</code>，旧 <code>hbt_*</code> 兼容见第 10 节）。格式转换的按钮动作为单一入口 <code>format_convert.py</code>。</div>
+
+    <!-- ============ 4 ============ -->
+    <h2 id="s4"><span class="no">04</span>界面语言</h2>
+    <p>菜单、工具条、对话框与日志关键字均支持简中、繁中、英文；「快捷打孔」菜单项随语言切换，但其 BlockStyler 对话框目前只有一份中文母本；「截图工具」的运行提示目前为简体中文。安装时按下列顺序判定，命中即停：</p>
+    <table class="compact">
+      <thead><tr><th style="width:22%">优先级</th><th style="width:40%">来源</th><th>映射</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>命令行 <code>-Lang</code></td><td><code>zh_cn</code> / <code>zh_tw</code> / <code>en</code></td></tr>
+        <tr><td>2</td><td><code>UGII_LANG</code></td><td>simpl_chinese、schinese → 简中；trad_chinese、chinese → 繁中；english → 英文</td></tr>
+        <tr><td>3</td><td>系统界面语言</td><td>zh-CN / zh-Hans / zh_hans → 简中；zh-TW / zh-HK / zh-Hant / zh_hant → 繁中</td></tr>
+        <tr><td>4</td><td>以上都不是</td><td>英文</td></tr>
+      </tbody>
+    </table>
+    <p>装错语言不用改文件，重跑安装器指定语言并重启 NX：</p>
+    <p><code>powershell -ExecutionPolicy Bypass -File install.ps1 -NxDir "D:\NX2506" -Lang zh_cn</code></p>
+    <ul>
+      <li><code>lang\</code> 母本统一 UTF-8，安装时按<strong>系统默认 locale 的 ANSI 码页</strong>（<code>GetSystemDefaultLCID</code>，系统区域改动后需重启才刷新）转码写入 <code>startup\</code>；代码页无法表示所选语言时回退 GBK(936)，并提示建议改用英文。</li>
+      <li>代码页能力<strong>按语言分别判定</strong>：简中用简体样本、繁中用繁体样本。CP936 简繁都能显示；CP950（繁体 Windows）只能显示繁体，系统 UI 为繁体时默认 <code>zh_tw</code>、不提示；CP932 / CP1252 中文都不可显示，默认回落 <code>lang\en</code> 并提示。检测与选择结果写入 <code>%TEMP%\NX便捷功能包_install.log</code>（含 <code>can_zh_cn</code> / <code>can_zh_tw</code> / <code>probe</code> / <code>candidate</code> / <code>feasible</code> / <code>lang</code> / <code>auto_switched</code>，以及 <code>sys_default_lcid</code> / <code>lcid_codepage</code> / <code>lcid_locale</code> / <code>sys_codepage</code> / <code>cp_reason</code>）。</li>
+      <li>运行时窗口文字按进程内 <code>UGII_LANG</code> 选取，缺项回落英文；菜单仍按安装时语言。</li>
+      <li><code>Quickhole.dlx</code> 不区分语言（单份中文母本），安装时随 <code>Quickhole.py</code> 原样部署到 <code>startup\</code>，不做转码。</li>
+      <li><strong>两插件须同语言</strong>，否则「顶层中文 + 子级联英文」混排（顶层标签由后加载者决定）。</li>
+    </ul>
+
+    <!-- ============ 5 ============ -->
+    <h2 id="s5"><span class="no">05</span>自动出图</h2>
+    <p>入口：<strong>NX 工具 → 出图 → 自动出图</strong>（工具条同）。先打开 .prt，点菜单弹出「自动出图 - 选择实体」，可多选实体，确定即开始；点取消＝不处理。</p>
+    <div class="note"><b>名称</b>原「批量出图」已更名为「自动出图」，在 NX 内直接出图，不依赖 AutoCAD。</div>
+    <p>作用：为每个选中实体生成一套三视图（主视 / 侧视 / 俯视），所有组横向排成一行放在<strong>同一张图纸</strong>上；主视图标注长、宽，俯视图标注厚度，保留一位小数。</p>
+    <h3>操作五步</h3>
+    <ol>
+      <li>在 NX 打开零件，确认它是当前工作部件。</li>
+      <li>点<strong>自动出图</strong>，在「自动出图 - 选择实体」里多选要出图的实体（可框选、可多选）。</li>
+      <li>工具自动切到制图应用，按批刷新界面，能看到视图逐步生成。</li>
+      <li>每个实体生成一张图纸，图纸名 <code>AD-1</code>、<code>AD-2</code>…，幅面按一行所需宽度自定义，套 A0 模板。</li>
+      <li>结束后不弹完成框；成功/失败组数与逐实体校验明细写入 <code>logs\Htet_autodwg.log</code>。校验出现 FAIL、视图重叠或错误行时，同一份报告才会显示在 NX 信息窗口。</li>
+    </ol>
+    <h3>参数（脚本顶部，可调）</h3>
+    <table>
+      <thead><tr><th style="width:34%">常量</th><th style="width:18%">默认值</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><code>CELL_GAP_X</code></td><td>60 mm</td><td>组与组之间的水平间距。</td></tr>
+        <tr><td><code>MARGIN_X / MARGIN_Y</code></td><td>45 / 65 mm</td><td>图纸左右 / 上下页边距。</td></tr>
+        <tr><td><code>VIEW_GAP_RATIO / MIN / MAX</code></td><td>10% / 30 / 100 mm</td><td>组内主视 / 侧视 / 俯视之间的间距。</td></tr>
+        <tr><td><code>MAX_GROUP_SIDE</code></td><td>900 mm</td><td>单组外形上限，超出按比例缩小。</td></tr>
+        <tr><td><code>MAX_ROW_SHEET_W</code></td><td>6000 mm</td><td>一行排布的图纸宽度上限；超宽时整体降比例（最小 1:200）。</td></tr>
+        <tr><td><code>PROGRESS_REFRESH_EVERY</code></td><td>3</td><td>每几组刷新一次界面；1＝每组刷新（最直观），0＝只在最后刷新（最快）。</td></tr>
+        <tr><td><code>A0_TEMPLATE_NAME</code></td><td>Drawing-A0-Size2D-template.prt</td><td>自定义幅面必须挂模板；找不到时按钮会弹窗报错并中止。</td></tr>
+        <tr><td><code>MANUAL_NX_TEMPLATE_DIR</code></td><td>空（自动解析）</td><td>手动指定模板目录，优先级最高，目录内需含 A0 模板文件。</td></tr>
+      </tbody>
+    </table>
+    <p><strong>模板目录</strong>：优先 <code>MANUAL_NX_TEMPLATE_DIR</code>，留空则按 NX 安装位置自动解析；找不到会提示候选路径与配置办法。</p>
+    <h3>已知表现</h3>
+    <ul>
+      <li>每次运行都<strong>新建</strong>图纸（<code>AD-n</code> 递增）与带时间戳的建模视图，不删旧图纸、不复用视图名，重复运行不会报重名。</li>
+      <li>实体多、一行超过 <code>MAX_ROW_SHEET_W</code> 时整体缩小比例，保证不越出纸张；比例过小时建议拆成两批。</li>
+      <li>运行前若未打开部件、零件无实体、A0 模板缺失、已有实例在跑，都会<strong>弹窗说明原因</strong>，不会静默失败。</li>
+      <li>出图只改当前 .prt（新增视图、图纸、标注），结束不自动保存，请自行保存或放弃。</li>
+    </ul>
+    <div class="warn"><b>运行环境</b>本功能是 NX 内部 journal，不调用 AutoCAD，不需要 <code>accoreconsole</code>、.NET 组件或任何外部转换器；只要 NX 2506 能正常制图即可。</div>
+
+    <!-- ============ 6 ============ -->
+    <h2 id="s6"><span class="no">06</span>逐件出图</h2>
+    <ul>
+      <li>入口：<strong>NX 工具 → 出图 → 逐件出图</strong>。每次只显示一个实体、隐藏其余，由你建视图、摆位、标注。</li>
+      <li>再次运行自动切到下一个；最后一个完成后在信息窗口写一行完成提示并清除进度。进度存 <span class="path">%TEMP%\Htet_export_body_progress.txt</span>（部件、时间戳、下一实体与 Tag）；换部件运行会提示「进度属于另一个部件」并清除旧进度。</li>
+      <li><strong>重置出图任务</strong>清除进度文件，并把当前部件全部实体恢复为可见。</li>
+      <li>与第 5 节<strong>自动出图</strong>是两套独立功能，别混用：<strong>自动出图</strong>（按钮 <code>Htet_batch</code>）一次为每个选中实体生成三视图并自动标注，适合批量；<strong>逐件出图</strong>（按钮 <code>Htet_stepwise</code>）只做隔离显示，视图与标注由你自己操作。</li>
+    </ul>
+
+    <!-- ============ 7 ============ -->
+    <h2 id="s7"><span class="no">07</span>颜色 / 显示 / 图层</h2>
+    <table>
+      <thead><tr><th style="width:26%">菜单项</th><th>作用</th></tr></thead>
+      <tbody>
+        <tr><td>红色 / 黑色 / 黄色 / 蓝色 / 棕色 / 灰色 / 绿色 / 橙色 / 紫色</td><td>选中实体改为对应颜色（NX 调色板 186 / 216 / 6 / 211 / 125 / 44 / 36 / 78 / 164）。</td></tr>
+        <tr><td>随机改色</td><td>每个选中实体随机上色，便于区分。</td></tr>
+        <tr><td>仅显示选中实体</td><td>隐藏其余，只留选中可见；中途失败自动回滚，不留“藏了一半”的状态。</td></tr>
+        <tr><td>设为半透明 / 取消透明</td><td>选中实体设为 50% 透明，或恢复为完全不透明。</td></tr>
+        <tr><td>一个体一个层</td><td>每实体各自图层并设为可选（Selectable），移层后仍可直接点选。</td></tr>
+        <tr><td>10为工作层</td><td>第 10 层设为工作层。</td></tr>
+        <tr><td>关闭全部图层 / 打开全部图层</td><td>保留工作层，其余图层整体关闭或打开（打开时设为可见可选）。</td></tr>
+        <tr><td>下一图层 / 上一图层</td><td>下一个 = 层号变大，上一个 = 层号变小；都跳到最近的有物体图层，自动跳过空层，不循环。</td></tr>
+        <tr><td>移到255层</td><td>选中对象批量移到第 255 层，并把该层修正为可见可选。</td></tr>
+        <tr><td>打开文件所在文件夹</td><td>在资源管理器中打开当前工作零件所在目录；未保存或无本地路径时给出提示。</td></tr>
+      </tbody>
+    </table>
+    <p><strong>目标怎么取</strong>：图形区已选中 → 直接用；未选中 → 弹选择框；仍未选 → 询问是否处理全部实体。</p>
+    <div class="tip"><b>可以直接接着选</b>取到目标后立即清空全局选中列表，下次点菜单一定重新弹选择框。</div>
+    <p>实体「点不动」通常不是工具问题，而是所在图层被设为参考（可见但不可选）；改回可选即可。</p>
+
+    <!-- ============ 8 ============ -->
+    <h2 id="s8"><span class="no">08</span>格式转换</h2>
+    <p>入口：<strong>NX 工具 → 常用工具 → 格式转换</strong>。流程固定为三步：选择内容 → 核对清单 → 开始转换。全程只有两个弹窗，标题固定为「格式转换」与「确认转换文件」。
+    </p>
+    <ul>
+      <li><strong>5 个方向</strong>：prt→stp、prt→igs、stp/igs→prt、x_t/x_b→prt、任意→stp/igs；prt↔stp 组置顶，第二行另列 x_t/x_b→stp、x_t/x_b→igs；底部原 x_t/x_b 提示文字已删除。</li>
+      <li>x_t / x_b 先导入临时件再导出，源文件不改动。</li>
+      <li>stp / igs → prt、x_t / x_b → prt 即原「批量导入」：每个文件独立成部件并全部显示，不塞进当前工作部件。</li>
+    </ul>
+    <div class="note"><b>入口说明</b>自 v3.3.0 起「格式转换」并入「NX 工具 → 常用工具」，<strong>没有单独的「批量导入」按钮或子菜单</strong>。原「批量导入」的图标 <code>batch_import.bmp</code> 已在 v3.2.1 移除；导入、导出与后台执行器现已合并为<strong>单文件入口 <code>format_convert.py</code></strong>，菜单与工具条都只指向它，文件自身包含导入函数与并发执行逻辑，不再依赖同目录其它 .py。</div>
+    <h3>第一步：选择内容</h3>
+    <p>左侧目录树，右侧列当前目录的可转换文件（.prt / .stp / .step / .igs / .iges / .x_t / .x_b），下方为已选清单。「加入文件夹」含子目录；双击文件只加单个。「输出目录」组两个单选项一行两列：「输出到源文件目录」在左，「输出到指定目录」在右，路径框在其下。</p>
+    <h3>第二步：核对清单</h3>
+    <ul>
+      <li>自动弹预览窗口（内置试跑），逐行显示「源文件 → 转换后名称 → 状态」。</li>
+      <li><strong>覆盖</strong>列只对已存在目标开放，默认不勾；有未保存修改时逐行询问：勾选＝先保存再导出，不勾＝跳过。</li>
+    </ul>
+    <h3>第三步：导出</h3>
+    <ul>
+      <li>按磁盘上的 .prt 生成 STEP/IGES；判断可见图层时临时切显示部件，结束后恢复原显示/工作部件。</li>
+      <li>只导出<strong>当前工作视图可见图层</strong>上的几何（按视图内可见性判定，不是图层全局开关）；隐藏层实体不进 STEP，装配体同样适用。</li>
+      <li>输出默认到源文件目录，也可指定统一目录（无效时回落原路径并记日志）。</li>
+      <li><strong>后台执行</strong>：进度窗可点走或最小化，不置顶；期间 NX 前台可继续操作；「同时执行数」默认 2（1~6 可调）。</li>
+    </ul>
+    <h3>转换成功后的打开选项</h3>
+    <ul>
+      <li>仅产物为 .prt 的方向生效：整批结束后可选「打开转换后的文件」，<strong>默认不勾选</strong>；勾选则自动打开本批成功的 .prt，失败或跳过的不打开，已在会话中的不重复打开；导出方向不出现该选项。原「打开上次导入结果」入口已移除。</li>
+    </ul>
+    <h3>停止与进度窗</h3>
+    <ul>
+      <li>点「停止」会清理本次已生成与本批未成功的文件，然后直接关闭弹窗；弹窗无「关闭」按钮，结束后用右上角 × 关闭。</li>
+      <li>进度窗随 NX 退出一起关闭，包括转换已结束、仅剩进度窗时再关 NX 的情况。</li>
+    </ul>
+    <h3>覆盖与命名</h3>
+    <table>
+      <thead><tr><th style="width:30%">情况</th><th>行为</th></tr></thead>
+      <tbody>
+        <tr><td>同名文件已存在</td><td>未勾覆盖：跳过，时间戳不变（仅文件头、无几何的旧文件自动重导）；勾选覆盖：<b>先把原文件复制为同名 <code>.bak</code></b>（<code>顶盖.step</code> → <code>顶盖.step.bak</code>，已有同名 .bak 则直接覆盖该 .bak），再写同目录临时文件（<code>顶盖.nxtmp_&lt;进程号&gt;.step</code>），成功后原子替换目标；备份失败则中止覆盖、原文件保持不动。导出失败旧文件保持完好，中断可能残留 <code>.nxtmp_*</code>。只读目标会自动清只读后替换；被占用时旧文件保持完好并报失败。</td></tr>
+        <tr><td>文件名含全角括号</td><td>输出转半角：（）→()、【】→[]，原 .prt 不改名。</td></tr>
+        <tr><td>转换后同目录重名</td><td>自动加 <code>_2</code>、<code>_3</code>。</td></tr>
+        <tr><td>导出结果只有文件头</td><td>重试一次；仍无几何判失败并删除产物。</td></tr>
+      </tbody>
+    </table>
+    <h3>覆盖与 .bak 备份</h3>
+    <div class="note"><b>备份规则</b>只要某个产物<b>已经存在</b>且当前是「同名已存在 = 覆盖」，覆盖动作发生前会先把原文件完整复制一份，名称为<strong>原文件名加 <code>.bak</code></strong>，放在<strong>同一目录</strong>：<code>D:\out\顶盖.step</code> → <code>D:\out\顶盖.step.bak</code>。同名 <code>.bak</code> 已存在时直接覆盖它（保留最近一次的原件，不会无限累积）。</div>
+    <ul>
+      <li><strong>备份失败即中止</strong>：磁盘满、只读、被占用等导致复制不成功时，本次覆盖不执行，原文件保持原样，该行记为失败并在日志写明原因 —— 不会出现「没备份就覆盖」。</li>
+      <li><strong>停止 / 回滚不删 .bak</strong>：中途点「停止」触发回滚时，只删除本次新生成的产物（原本不存在的那些），覆盖模式下的目标文件与 <code>.bak</code> 都保留，方便对照。</li>
+      <li><strong>导入侧同一口径</strong>：stp / igs / x_t → prt 方向若目标 <code>.prt</code> 已存在且为覆盖，同样先把原 <code>.prt</code> 备份为 <code>同名.prt.bak</code> 再保存；保存失败会用 .bak 还原目标，.bak 保留不删。</li>
+      <li><strong>清理方式</strong>：<code>.bak</code> 是纯副本，脚本不自动清理。确认新产物无误后，在资源管理器搜索 <code>*.bak</code>（或 <code>*.step.bak</code> / <code>*.igs.bak</code> / <code>*.prt.bak</code>）手动删除即可；长期覆盖同一批文件时每份只占一个 .bak 的空间。</li>
+    </ul>
+
+    <h3>记忆与日志</h3>
+    <ul>
+      <li><strong>记忆</strong>：上次目录与选项（位置、目录、前后缀、同名策略、格式）自动带出。</li>
+      <li>日志与并发锁见第 11 节；主日志不可写时回落 <code>%TEMP%\nx_step_export_&lt;进程号&gt;.log</code>。</li>
+    </ul>
+    <div class="tip"><b>执行后状态</b>部件集合、显示/工作部件、未保存标记均恢复（例外：勾选保存的那几个）；除 .step/.igs 与日志外，不新建、不删除用户文件。</div>
+
+    <!-- ============ 9 ============ -->
+    <h2 id="s9"><span class="no">09</span>不同状态下的导出行为</h2>
+    <table class="compact">
+      <thead><tr><th style="width:30%">.prt 状态</th><th style="width:28%">脚本行为</th><th>结果 / 日志</th></tr></thead>
+      <tbody>
+        <tr><td>未打开</td><td>临时打开取图层可见性，导完只关自己开的</td><td>生成有效文件；显示/工作部件不变</td></tr>
+        <tr><td>已打开、未修改</td><td>复用已打开部件，只切显示部件</td><td>生成有效文件，不关闭该部件</td></tr>
+        <tr><td>已打开、有未保存修改</td><td>勾选保存的部件先存再导；未勾选的跳过</td><td>勾选者几何与保存后一致；未勾选原文件不变</td></tr>
+        <tr><td>只读文件</td><td>只读取并导出</td><td>输出目录必须可写</td></tr>
+        <tr><td>同名目标已存在</td><td>未勾跳过；勾选先把原文件备份为同名 <code>.bak</code>，再写临时文件原子替换</td><td>未覆盖时间戳不变；覆盖后原文件留在 <code>.bak</code>，备份失败则中止；中断可能残留 <code>.nxtmp_*</code></td></tr>
+        <tr><td>实体所在图层全部隐藏</td><td>可见层无几何，两次尝试后判失败</td><td>删除无效产物，日志写明原因</td></tr>
+        <tr><td>装配体</td><td>按装配视图可见层导出，保留组件结构</td><td>面数受可见层限制，规则同单件</td></tr>
+        <tr><td>被其他进程独占 / 不可读</td><td>无法打开该部件</td><td>记为失败，关闭占用程序后重试</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ============ 10 ============ -->
+    <h2 id="s10"><span class="no">10</span>旧版本兼容</h2>
+    <p>本轮把脚本、按钮、图标统一为 <code>Htet_*</code>（旧 <code>hbt_*</code> 已改名），旧数据仍可读取：</p>
+    <table class="compact">
+      <thead><tr><th style="width:30%">对象</th><th>兼容方式</th></tr></thead>
+      <tbody>
+        <tr><td>旧图形界面文件</td><td>旧 <code>.dlx</code> 安装时备份为 <code>.nxbat.bak</code>，卸载恢复；重装幂等。</td></tr>
+        <tr><td>旧出图进度</td><td><code>HBT_STATE_V2</code> 可读并<strong>就地迁移</strong>；更早的「序号 + Tag」纯文本也能识别；旧 <code>hbt_*</code> 临时进度自动接管。</td></tr>
+        <tr><td>旧图纸</td><td>同时认 <code>HTET_SHEET</code> 与 <code>HBT_SHEET</code>，旧图纸仍可清理/续算，不误当用户图纸。</td></tr>
+        <tr><td>旧日志</td><td>原处保留、不删除；新日志写新文件名。</td></tr>
+        <tr><td>已装用户</td><td>菜单/工具条/按钮 ID 与脚本名保持 <code>Htet_*</code>；无需卸载，覆盖安装即可。</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>不会动的东西</b>兼容处理只读写本插件自己的进度、标记与日志，不改 .prt、.step 与已完成的图纸内容。</div>
+
+    <!-- ============ 11 ============ -->
+    <h2 id="s11"><span class="no">11</span>日志与临时文件</h2>
+    <table class="compact">
+      <thead><tr><th style="width:36%">文件</th><th style="width:18%">位置</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td>Htet_autodwg.log</td><td>插件 logs\</td><td>自动出图日志（预检结果、逐实体校验、异常堆栈）；UTF-8 带 BOM，2 MB × 3 轮转；不可写回落 %TEMP%</td></tr>
+        <tr><td>Htet_autodwg.lock、Htet_export_body_progress.txt、Htet_autodraw_progress.txt</td><td>%TEMP%</td><td>自动出图单实例锁与逐件出图进度（旧版进度可清理）</td></tr>
+        <tr><td>batch_import.log、import_last_dir.txt</td><td>插件 logs\</td><td>导入逐文件日志（2 MB × 3 轮转）与上次目录</td></tr>
+        <tr><td>batch_export_step.log、export_last_dir.txt、export_options.json</td><td>插件 logs\</td><td>导出清单、上次目录与选项记忆（日志 2 MB × 3 轮转）</td></tr>
+        <tr><td>nx_step_export.lock / busy.log / ui_errors.log</td><td>%TEMP%</td><td>导出并发锁、并发提示、界面异常明细</td></tr>
+        <tr><td>nx_batch_tools_install.log / nx_step_export_install.log</td><td>%TEMP%</td><td>安装记录（时间、语言、目录、字节数/SHA256）</td></tr>
+        <tr><td>nx_batch_import_&lt;进程号&gt;\、nx_batch_export_&lt;进程号&gt;\</td><td>%TEMP%</td><td>后台运行的计划、进度与分片日志；批次结束即整目录删除</td></tr>
+      </tbody>
+    </table>
+    <p><strong>临时目录清理</strong>：进度窗关闭时先结束子进程，再删除本次运行目录与自己的会话标记，并在主日志记录 <code>[close:*]</code>（<code>temp_removed=1/0</code>）。三条关闭路径都会清理——NX 退出、同一插件再次启动新批次、手动关闭 / 取消。若 NX 崩溃或进程被强杀，下次启动批次时顺带清掉 PID 已退出的遗留目录。</p>
+
+    <!-- ============ 12 ============ -->
+    <h2 id="s12"><span class="no">12</span>已知限制</h2>
+    <h3>1. 图纸树可能显示过期标记（红叉）</h3>
+    <p>出图后图纸树可能显示红叉（NX 自带过期标记，<strong>公共 API 无法清除</strong>），<strong>不影响视图、尺寸与图纸内容</strong>，刷新或重开即消失。<strong>出图后不要对图纸执行「更新」</strong>，强制更新仍可能把全部实体重新吸收进视图。</p>
+    <h3>2. 「抑制视图更新」是会话级偏好</h3>
+    <p>出图期间工具会打开 NX「抑制视图更新」偏好；该偏好是<strong>会话级</strong>的，进制图/切回建模时被 NX 复位，工具按需重开，重启 NX 后恢复默认。</p>
+    <p>如需 NX 自动视图更新（如改模型后视图跟着更新），在<strong>首选项 → 制图 → 视图 → 更新</strong>里取消勾选「抑制视图更新」，或重启 NX 后再操作。</p>
+<h3>3. 快捷打孔只处理当前工作零件的平面</h3>
+<p>入口面必须是<strong>平面</strong>，组件需先设为工作零件；可连续「添加孔中心」后一次应用，支持「清空中心」与中心计数。孔方向沿入口面法向向内，可用「反转方向」；腰孔两端也须落在实体内。对话框目前为中文。</p>
+    <h3>4. 自动出图会不断新增图纸</h3>
+    <p>每次运行新建 <code>AD-1</code>、<code>AD-2</code>…，不覆盖也不清理旧图纸；同一个零件反复出图，图纸会持续累积。不需要的图纸请手动删除。建模视图（名字带时间戳）同理保留在部件导航器中。</p>
+    <h3>5. 自动出图单行有宽度上限</h3>
+    <p>所有组横向排一行，图纸宽度上限 <code>MAX_ROW_SHEET_W = 6000 mm</code>；实体很多时会整体缩小比例（最小 1:200），可能小到看不清。建议分批选实体，或按需调大该常量。当前版本不做自动换行/分页。</p>
+    <div class="warn"><b>另外两点</b>本版未提供 Ribbon 页签（NX 2506 嵌套菜单页签为空，只保留经典菜单与工具条）；Windows 路径超过 260 字符时 NX 无法访问，请把项目放到层级更浅的目录。</div>
+
+    <!-- ============ 13 ============ -->
+    <h2 id="s13"><span class="no">13</span>常见问题</h2>
+    <table>
+      <thead><tr><th style="width:27%">现象</th><th>处理</th></tr></thead>
+      <tbody>
+        <tr><td>菜单没有出现</td><td>查 <code>custom_dirs.dat</code> 有本插件行、<code>startup\</code> 文件齐全、已重启；菜单在左侧竖列（帮助之前）。</td></tr>
+        <tr><td>点菜单没反应 / 「未知操作类型」</td><td>ACTIONS 只接受裸文件名（如 <code>format_convert.py</code>），不能加 <code>python:</code> 前缀或绝对路径；脚本须在 <code>startup\</code>，改完重启。</td></tr>
+        <tr><td>快捷打孔报找不到对话框</td><td><code>Quickhole.py</code> 与 <code>Quickhole.dlx</code> 必须在同一目录（通常都是 <code>startup\</code>）；重跑安装器会一并部署，然后重启 NX。</td></tr>
+        <tr><td>顶层中文、组名英文</td><td>菜单与功能区语言母本不一致；用同一语言重装一次并重启 NX。</td></tr>
+        <tr><td>图纸树红叉</td><td>NX 过期标记，不影响内容；不要「更新」，刷新或重开即消失（第 12 节）。</td></tr>
+        <tr><td>每张图都是最后一个实体 / 视图空白</td><td>旧版缺陷，现用「抑制视图更新 + 仅目标实体可见」修复；确认已升级到 v2.5.0 并重启。</td></tr>
+        <tr><td>出图比例不对</td><td>先看 <code>logs\Htet_autodwg.log</code> 的逐实体校验报告；组被删或尺寸漏标都会写入其中。存在 FAIL、视图重叠或错误行时，同一份报告也会显示在 NX 信息窗口。</td></tr>
+        <tr><td>关联投影不可用</td><td>日志写「已降级」，三视图不联动，功能可用。</td></tr>
+        <tr><td>提示已有任务在进行</td><td>等上一次结束，或确认进程退出后清理 <code>%TEMP%</code> 对应的 <code>.lock</code>。</td></tr>
+        <tr><td>导入后只剩一个部件</td><td>旧版（ReplaceExisting）缺陷，现为追加显示并统一补显示；确认 v2.1.1 并重启。</td></tr>
+        <tr><td>导入后留下空部件</td><td>该文件中途失败，脚本不自动关闭以免误存；手动关闭，日志有原因。</td></tr>
+        <tr><td>一个文件都没导出</td><td>确认目录有 .prt、清单非空；隐藏图层不导出，先设为可见。</td></tr>
+        <tr><td>STEP 只有几 KB / 空模型</td><td>多为实体在隐藏图层；可见层无几何会判失败并删产物，日志有原因。</td></tr>
+        <tr><td>覆盖时提示只读 / 被占用</td><td>只读属性会在替换前自动清除；仍失败多是被 Excel、记事本等占用，关闭后重试。覆盖前先把原文件备份为同名 <code>.bak</code>，再走临时文件 + 原子替换；备份失败即中止，失败时旧文件保持不动。</td></tr>
+        <tr><td>文件名含 emoji / 路径超 260</td><td>NX 无法访问，会提示；改名或移到层级更浅的目录。</td></tr>
+        <tr><td>选择窗打不开某目录</td><td>无权限或不存在，提示「无法访问这个文件夹」；异常见第 11 节。</td></tr>
+        <tr><td>自动出图点了没反应 / 没生成图纸</td><td>先看是否有提示框（未打开部件、无实体、A0 模板缺失、已有实例在跑）；再看 <code>logs\Htet_autodwg.log</code>。NX 信息窗口只在失败或校验不通过时出现。</td></tr>
+        <tr><td>自动出图提示找不到 A0 模板</td><td>模板目录不再写死，按 NX 报告的安装根解析：依次尝试 <code>MANUAL_NX_TEMPLATE_DIR</code>（<code>Htet_autodwg.py</code> 顶部手动项）、<code>UGII_BASE_DIR\DRAFTING\templates</code>、<code>UGII_ROOT_DIR\DRAFTING\templates</code>，文件名为 <code>Drawing-A0-Size2D-template.prt</code>。把模板放到上述任一目录，或把 <code>MANUAL_NX_TEMPLATE_DIR</code> 设为模板所在目录；报错信息会列出已尝试的全部路径。</td></tr>
+        <tr><td>自动出图比例太小 / 尺寸看不清</td><td>实体太多导致单行超过 6000 mm，工具会整体降比例；分批选实体，或调大 <code>MAX_ROW_SHEET_W</code>。</td></tr>
+        <tr><td>自动出图后视图空白 / 漏图</td><td>确认出图期间没有手动改可见性；空白多由其它实体遮挡引起，工具已用「仅目标实体可见」规避。仍异常请附 <code>logs\Htet_autodwg.log</code>。</td></tr>
+        <tr><td>卸载后菜单还在</td><td>卸载只删 <code>custom_dirs.dat</code> 注册行，需重启 NX；被其它安装器还原时重跑卸载或手动删行。</td></tr>
+        <tr><td>换电脑 / 移动安装目录</td><td>新位置重跑安装器；注册只写在该 NX 目录的 <code>UGII\menus\custom_dirs.dat</code>。</td></tr>
+        <tr><td>网络盘导出失败</td><td>映射盘可导出；断连会在打开/写入时报失败，不会静默成功。</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ============ 14 ============ -->
+    <h2 id="s14"><span class="no">14</span>可调配置（一般不用改）</h2>
+    <h3>自动出图：application\Htet_autodwg.py 顶部</h3>
+    <ul>
+      <li><code>CELL_GAP_X</code>：60 mm，组间水平间距；<code>MARGIN_X / MARGIN_Y</code>：45 / 65 mm，图纸页边距。</li>
+      <li><code>VIEW_GAP_RATIO / VIEW_GAP_MIN / VIEW_GAP_MAX</code>：10% / 30 / 100 mm，组内视图间距。</li>
+      <li><code>MAX_GROUP_SIDE</code>：900 mm，单组外形上限；<code>MAX_ROW_SHEET_W</code>：6000 mm，单行图纸宽度上限。</li>
+      <li><code>MIN_SCALE / MAX_SCALE</code>：0.005 / 1.0，比例范围；<code>PROGRESS_REFRESH_EVERY</code>：3，界面刷新节奏。</li>
+      <li><code>A0_TEMPLATE_NAME</code>：A0 模板文件名；<code>PROJECTION_ANGLE</code>：First（第一角投影）。</li>
+      <li>其余常量见代码；改完重启 NX 生效。</li>
+    </ul>
+    <h3>导出：startup\format_convert.py 顶部</h3>
+    <ul>
+      <li><code>VISIBLE_LAYERS_ONLY</code>：True，只导出当前视图可见图层（改 False 则导出 1–256 全部图层）。</li>
+      <li><code>SKIP_EXISTING</code>：True，同名且含几何的目标默认跳过；预览里的逐行「覆盖」优先。</li>
+      <li><code>RECURSIVE</code>、<code>INCLUDE_DIRS / EXCLUDE_DIRS</code>、<code>INCLUDE_FILES / EXCLUDE_FILES</code>、<code>PICK_MODE</code>、<code>INTERACTIVE</code> 见代码常量。</li>
+    </ul>
+    <h3>导入 / 导出：进度窗</h3>
+    <ul>
+      <li><code>workers</code>：同时执行数，默认 2，可选 1~6；越界自动按 1 或 6 处理。</li>
+      <li>运行中可在进度窗内调整并发；导入、导出各自记忆上次选择。</li>
+      <li>导入直读时进度为独立小窗：不置顶、不抢焦点、不进任务栏，可取消，结束自动关闭。</li>
+    </ul>
+    <p>改配置前先备份脚本，改完重启 NX 验证一次。</p>
+
+    <!-- ============ 15 ============ -->
+    <h2 id="s15"><span class="no">15</span>文件清单</h2>
+    <div class="tree">
+      包根\<br>
+      <span class="lvl2">├─ NX便捷功能包.exe　<em>图形安装器与卸载入口</em></span><br>
+      <span class="lvl2">├─ install.bat / install.ps1　<em>单一安装脚本</em></span><br>
+      <span class="lvl2">├─ uninstall.bat / uninstall.ps1　<em>单一卸载脚本</em></span><br>
+      <span class="lvl2">├─ version.txt / 使用说明.html</span><br>
+      <span class="lvl2">└─ NX工具\　<em>唯一模块目录（旧 Htet工具 + 格式转换 的并集）</em></span><br>
+      <span class="lvl3">├─ application\：37 个 <code>.py</code>（自动出图、逐件出图、颜色、图层、常用工具、快捷打孔、格式转换、公共库、语言包）＋ <code>Htet_Sniptool.vb</code> ＋ 4 个 <code>.dlx</code> ＋ <code>CustomFeatureConfiguration.xml</code> ＋ <code>screw_icons\</code> 4 个 bmp ＋ <code>profiles\All\NX_tools.rtb</code>（六组合一的唯一功能区）</span><br>
+      <span class="lvl3">├─ startup\：<code>Htet_menu.men</code> / <code>.tbr</code>、<code>step_export.men</code> / <code>.tbr</code>、29 个 bmp、安装时部署的 37 个 <code>.py</code> / <code>.vb</code> 与 2 个 <code>.dlx</code>、<code>screw_icons\</code> 4 个 bmp（菜单只从 startup 找脚本）</span><br>
+      <span class="lvl3">├─ lang\zh_cn|zh_tw|en\：各 8 件（两套 <code>.men</code> / <code>.tbr</code> ＋ <code>Htet_tools.rtb</code> ＋ <code>Format_convert.rtb</code> ＋ 2 个 <code>.dlx</code>）</span><br>
+      <span class="lvl3">├─ bitmap\：<code>nx_screw_insert_ui.bmp</code>　└─ exefile\：<code>GongCha.exe</code></span></div>
+    <p>使用说明只在包根放一份 <code>使用说明.html</code>；模块内不再有单独的 install / uninstall / version.txt，也不再区分两个子目录。</p>
+
+    <!-- ============ 16 ============ -->
+    <h2 id="s16"><span class="no">16</span>卸载</h2>
+    <ol>
+      <li>双击根目录 <code>uninstall.bat</code>（或用 <code>NX便捷功能包.exe</code> 点「卸载插件」），按提示选同一个 NX 安装目录（含 UGII 的那层）。</li>
+      <li>卸载器只删 <code>custom_dirs.dat</code> 里 <code>NX工具</code> 那一行（其它行、换行、只读属性不变），并兜底清理旧版 <code>Htet工具</code> / <code>格式转换</code> 两行；旧目录与用户文件不删。</li>
+      <li>重启 NX，顶层「NX 工具」菜单与功能区选项卡不再出现。</li>
+      <li>最后手动删除插件文件夹（<code>logs\</code> 等用户产物请先备份）。</li>
+    </ol>
+    <p>卸载不删 .prt、已导出的 .step/.igs、<code>logs\</code> 与安装日志。静默执行加 <code>-Force</code>，只预览加 <code>-WhatIf</code>。</p>
+
+    <!-- ============ 17 ============ -->
+    <h2 id="s17"><span class="no">17</span>更新记录</h2>
+    <table>
+      <thead><tr><th style="width:16%">版本</th><th style="width:16%">日期</th><th>变更</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>NX便捷功能包 v3.4.0<br>合并模块 NX工具<br>（Htet 2.5.1 + 格式转换 2.1.5）</td>
+          <td>2026-11-15</td>
+          <td>取消后不再补一条界面提示（日志照写）。① <strong>「未选中对象，是否对全部实体执行」点「否」</strong>：不再往 NX 信息窗口写「[提示] 已取消，未做任何修改。」，直接返回 <code>None</code>，调用方立即退出；公共实现 <code>Htet_common.resolve_targets()</code> 一处改动覆盖 14 个调用脚本（9 个固定改色、随机改色、半透明、取消透明、一个体一个层、移到 255 层）。② <strong>自动出图</strong>实体选择器取消：只写 <code>logs\Htet_autodwg.log</code>（「未选择实体，程序结束。」），不再展开信息窗口。③ <strong>逐个实体出图</strong>选择窗取消/关闭：改为只写 <code>logs\Htet_drawing.log</code>，不再输出「[提示] 未选择实体，未开始出图任务。」。④ <strong>仅显示选中实体</strong>对话框取消：改为只写 <code>logs\Htet_drawing.log</code>，不再输出「[提示] 已取消，未改变任何实体的显示状态。」。失败/错误提示、撤销、返回值与既有 <code>ctx(open_listing=False)</code> 约定全部保留。⑤ <strong>自动出图正常完成不再展开 NX 信息窗口</strong>：「开始自动出图」「结束：总耗时…」、实体清单、逐件尺寸/比例/视图/标注明细全部只写 <code>logs\Htet_autodwg.log</code>；仅当校验出现 FAIL、视图重叠或错误行时，才把整份校验报告写入信息窗口；未打开零件、无实体、A0 模板缺失、建视图失败、流程异常、选择器失败仍弹窗。本次为文档与热修改动，<strong>版本号保持 3.4.0，未升级</strong>。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.9<br>合并模块 NX工具<br>（Htet 2.5.1 + 格式转换 2.1.5）</td>
+          <td>2026-11-15</td>
+          <td>修复格式转换「转换后打开文件」生成的 prt 实体落在隐藏图层、图形区空白：转换路径用 <code>PartCollection.NewDisplay</code> 新建空部件，除工作层(1)外 255 个图层默认全部「隐藏」，而 STEP 里的 <code>PRESENTATION_LAYER_ASSIGNMENT</code> 把实体放在 151 层；NX 手动打开同一个 <code>.step</code> 时新部件是「工作层 1 + 1~255 可选 + 256 仅可见」，所以手动打开可见、转换产物不可见（图层设置里 151 有 2 个对象但不可见）。现在新建部件后、导入前把图层状态铺成与手动打开完全相同的默认分布（工作层不动），单文件与批量一致；实测同一份 stp：手动打开与转换产物均为 2 个实体、实体在 151 层、151=可选、工作层 1、工作视图可见对象 23。导出方向（prt→step 等）不受影响。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.8<br>合并模块 NX工具<br>（Htet 2.5.1 + 格式转换 2.1.5）</td>
+          <td>2026-11-15</td>
+          <td>① <strong>修复「先选体、再点功能」必失败</strong>：公共选体入口 <code>Htet_common.selected_objects()</code> 以前只认具体类型对象，选择管理器在实机 NX 2506 上偶尔返回基类 <code>TaggedObject</code>，导致图形区已有预选却被当成「没选」、又弹一次选择框；现在按 Tag 在零件的 Bodies / FacetedBodies / SubdivisionBodies / Features / Curves / Points 里换回具体对象，预选直接生效、不再弹框。改色（9 个固定色 + 随机改色）、半透明、取消透明、仅显示选中、一个体一个层以及其他调用 <code>resolve_targets()</code> / <code>selected_objects()</code> 的命令一并受益。② 预选不是实体时不再默默丢弃：选中面/边会换回它所属的实体（<code>Face/Edge.GetBody()</code>），选中特征仍按生成几何展开；整份预选里没有任何实体（片体、曲线、点）时先写一条可见提示，再走原来的选择框，行为不退化。③ 修复格式转换「转换后打开文件」打开空白零件：<code>.prt</code> 的系统关联是 <code>ugs_router.exe -ug -use_file_dir "%1"</code>，只把文件所在目录传给 NX、不把文件本身交给 NX，而旧代码优先走系统关联且把「调起成功」当成「已打开」，于是 NX 起的是空窗口。实测本机 NX 2506：<code>ugs_router.exe -ug "&lt;prt&gt;"</code> 会在已运行的 NX 会话里打开该部件，而 <code>ugraf.exe "&lt;prt&gt;"</code> 只进起始页、部件并未加载。现在改为优先用 <code>ugs_router.exe -ug "&lt;实际生成的 prt&gt;"</code>，router 缺失或失败才退 <code>ugraf.exe</code>，最后才退系统关联；打开前按「存在 + 非空 + 可独占读」有界校验（最多 15 秒，条件满足立即继续），单个与批量都只打开台账里 <code>status=ok</code> 的那个目标文件。④ 排查「实体转片体」：各方向导出用 <code>Step214Creator</code> / <code>IgesCreator</code> / Parasolid 导出，导入用 <code>Step214Importer</code> / <code>IgesImporter</code> / <code>ParasolidImporter</code> 直接导入工作部件，均无「只导曲面」开关；实测源 STEP（3 个 <code>MANIFOLD_SOLID_BREP</code>）转换后为 3 个实体 / 0 个片体，未发现实体被转成片体，代码不动（IGES 本身以曲面为主，源文件是曲面时结果就是片体）。⑤ 菜单 31 项 ACTIONS 与功能区 6 组、<code>NX_tools.rtb</code> 均未改动。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.7<br>合并模块 NX工具<br>（Htet 2.5.0 + 格式转换 2.1.4）</td>
+          <td>2026-11-15</td>
+          <td>① 第一批弹窗去噪（24 处）：9 个固定改色、随机改色、半透明、取消透明、仅显示选中实体、8 个图层命令、打开文件夹、重置出图任务、逐件出图完成框（2 处）、螺钉「螺丝生成成功」框——点完不再弹模态框。② 成功路径不再展开 NX 信息窗口：<code>ctx(open_listing=False)</code>；<code>require_part</code> 与新增 <code>notice()</code> 在无零件、无目标、失败时仍先展开窗口再写提示，失败/异常信息与确认框全部保留。③ 格式转换修正提示类型：原始异常与选文件窗口回落失败由 Information 改为 Error，后台启动失败的 Windows 消息框图标由信息（0x40）改为错误（0x10）。④ 菜单 31 项 ACTIONS 与功能区 6 组、<code>NX_tools.rtb</code>（2,999 字节 / SHA256 <code>3313B528…F48EF87</code>）均未改动。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.6<br>合并模块 NX工具<br>（Htet 2.5.0 + 格式转换 2.1.4）</td>
+          <td>2026-11-15</td>
+          <td>① 目录合并：原 <code>Htet工具\</code> 与 <code>格式转换\</code> 合为一个 <code>NX工具\</code>（<code>application\</code> / <code>startup\</code> / <code>lang\{zh_cn,zh_tw,en}\</code> 取并集，无同名冲突）；菜单与功能区仍为统一的「NX 工具」31 项 / 6 组。② 安装卸载不再模块化：包根只保留一套 <code>install.ps1</code> / <code>uninstall.ps1</code>（及 .bat 与 exe），不再询问或分别调用子模块安装器；<code>custom_dirs.dat</code> 只维护 <code>NX工具</code> <strong>一行</strong>。③ 旧版迁移：安装时自动追加新一行并摘掉 v3.3.5 及更早的 <code>Htet工具</code> / <code>格式转换</code> 两行；旧目录与用户文件原地保留、不删。④ 功能生成物与 v3.3.5 逐字节一致：<code>application\profiles\All\NX_tools.rtb</code> 2,999 字节 / 6 组 / SHA256 <code>3313B528…F48EF87</code>。⑤ 三语（CP936 / CP950 / CP1252）严格转码与自检沿用，安装、卸载均可重复执行。⑥ PPT 与演示材料未改动。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.5<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 自动出图补回文件日志 <code>logs\Htet_autodwg.log</code>：记录开始（零件名与路径）、实体清单概要、逐实体的尺寸/比例/视图隔离与标注校验结果、异常堆栈和总耗时；日志位置、UTF-8 带 BOM、行格式 <code>[时间 PID=]</code>、2 MB × 3 轮转、不可写回落 <code>%TEMP%</code> 均与包内其它模块一致（v3.4.0 起日志只写文件、不再写入信息窗口；失败/错误仍写信息窗口）。② 自动出图的界面与日志中文不再受系统码页影响：源码 UTF-8，日志显式 <code>encoding="utf-8"</code>，NX 信息窗口按 Unicode 写入，仅有控制台 <code>print</code> 兜底并对编码异常做捕获；936 / 950 / 1252 三种码页下实测均不乱码。③ 其余逻辑不变：未加跑批锁，未改图纸模板路径回退与出图算法。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.4<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 功能区「打开文件所在文件夹」从「应用模块」组移到「导入导出」组，与「格式转换」并排（组内顺序：格式转换、打开文件所在文件夹）；应用模块组剩 5 项。组序仍为 颜色 / 显示 / 图层 / 出图 / 应用模块 / 导入导出。② 传统工具条 <code>.tbr</code> 同步（原 005 组移出，新增 006「导入导出」组）；菜单结构不变，该命令仍在「常用工具」下。③ 逐项复核 31 个按钮 ID → <code>.men</code> BUTTON → <code>ACTIONS</code> 脚本，未发现重复 ID 或错绑。④ 修复「点改色却像在跑批量出图」：根因不是按钮错绑，而是改色/显示/图层等命令在未预选实体时弹出的 NX 原生选择对话框，标题误用了自动出图的程序名「批量出图」；现改用独立标题键 <code>ui.pick_title</code>（选择对象 / 選擇物件 / Select Object）。⑤ 替换自动出图脚本 <code>Htet_autodwg.py</code>（57,298 字节 / 1,495 行 → 51,337 字节 / 1,322 行），部署文件名与位置不变。⑥ 真机逐项验证：改色 10 个按钮的颜色号全部正确，出图 3 个、计算器、格式转换、打开文件所在文件夹各点一次均对应正确。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.3<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 修正中文界面下功能区仍显示英文的分组名：<code>Draw</code> → <code>出图</code>（繁中 <code>出圖</code>）、<code>ImportExport</code> → <code>导入导出</code>（繁中 <code>匯入匯出</code>），与菜单分组名统一；英文界面保持 <code>Draw</code> / <code>ImportExport</code> 不变。② 同步修改三语功能区母本 <code>Htet_tools.rtb</code> / <code>Format_convert.rtb</code> 与传统工具条 <code>.tbr</code> 的组名；按钮名、提示文字、组内顺序、按钮形制、按钮 ID 与业务脚本均未改动。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.2<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 修正功能区落点：NX 2506 只扫描 <code>&lt;自定义目录&gt;\application\profiles\All\</code> 下的 <code>.rtb</code>，v3.3.1 放 <code>application\</code> 根下不会被扫描（对照本机第三方插件 <code>D:\ngll_tool\application\profiles\All\MeiLeiCommon_*.rtb</code> 及其在 <code>user.mtx</code> 的 <code>ribbontab</code> 登记确认）；② 实测同 TITLE 的两个 <code>.rtb</code> <strong>不会合并</strong>，会出现两个「NX 工具」选项卡，故改为安装时把两模块六组合并成单一文件 <code>application\profiles\All\NX_tools.rtb</code>（Htet 五组在前、ImportExport 在后），并清理旧位置/旧文件名的 rtb；③ 已在本机 NX 2506 实际启动验证：功能区出现唯一「NX 工具」选项卡，六组 31 个按钮齐全；④ 按钮形制沿用原方案：Draw 与 应用模块 用「大图标在上、文字在下」，颜色/显示/图层用中图标+文字；菜单结构、按钮 ID、业务脚本未改动。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.1<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 修复「功能区看不到 NX 工具选项卡」：NX 2506 的 ribbon 选项卡只由 <code>application\</code> 下的 <code>.rtb</code> 定义，<code>startup\</code> 里的 <code>.tbr</code> 只生成传统可停靠工具条（ribbon 界面下默认隐藏），所以此前只有 <code>.tbr</code> 时选项卡不会出现；② 新增三语功能区母本 <code>lang\&lt;lang&gt;\Htet_tools.rtb</code>（颜色 / 显示 / 图层 / Draw / 应用模块五组 30 按钮）与 <code>lang\&lt;lang&gt;\Format_convert.rtb</code>（ImportExport 组 1 按钮），两文件同 TITLE（简繁「NX 工具」、英文 <code>NX tools</code>），NX 启动时自动合并为同一个选项卡（v3.3.2 实测：同 TITLE 不会合并，已改为单一文件）；③ 两个安装器把母本按码页转码写入各自 <code>application\</code> 并做读回自检；④ 菜单结构、按钮 ID、业务脚本、位图均未改动，<code>.tbr</code> 保留用于传统界面兼容。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.3.0<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-15</td>
+          <td>① 菜单与工具栏重构：顶层统一为「NX 工具」（English 界面为 <code>NX tools</code>），取消「htet工具 / 批量文件」两级，平铺为 颜色 / 显示 / 图层 / 出图 / 常用工具 五组共 31 项；工具栏合并为单个「NX 工具」选项卡（颜色 / 显示 / 图层 / Draw / 应用模块 / ImportExport 六组）。② 「格式转换」移入常用工具组；原 <code>batch_export_step.py</code>、<code>batch_import.py</code>、<code>nx_batch_runner.py</code> 合并为自包含单一入口 <code>format_convert.py</code>（不再 import 同目录兄弟脚本，单文件复制亦可独立运行），菜单与工具栏 <code>ACTIONS</code> 全部指向它，<code>startup\</code> 与 <code>application\</code> 各一份且哈希一致，五个转换方向、6 路并发、输出目录/同名策略/前后缀、关窗继续与完成后打开行为不变。③ 安装器同步必需文件清单、<code>application\</code> 兜底复制与哈希自检、陈旧节点/陈旧文件巡检（旧三 py 改名到 <code>_stale\</code>，不删除）及安装汇总提示；卸载策略不变。④ 简中/繁中/English 三语菜单与工具栏文案同步，多码页安装不乱码、无空项。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.9<br>Htet工具 v2.5.0 + 格式转换 v2.1.4</td>
+          <td>2026-11-14</td>
+          <td>① 修复「格式转换」点菜单弹「没有注册该按钮上的操作」：NX 只从 <code>application\</code> 注册菜单 <code>ACTIONS</code> 指向的 <code>.py</code>，<code>startup\</code> 下的脚本只被当作用户出口在启动时 import，不会成为按钮动作；② 安装器在 <code>格式转换\</code> 下生成 <code>application\</code>，以 <code>startup\</code> 为母本同步三个脚本，并做 SHA256 一致性自检，防止两份漂移；③ 发布包直接内含 <code>application\</code> 目录，手工解压也可用；其余功能与 v3.2.8 相同。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.8<br>Htet工具 v2.5.0 + 格式转换 v2.1.3</td>
+          <td>2026-11-14</td>
+          <td>① 新增「添加螺钉」（菜单 / 工具条 / 三语言）；② 安装器补齐螺钉与自定义特征文件校验，部署 <code>nx_screw_insert.dlx</code> 与 <code>screw_icons\</code> 到 <code>startup\</code>，卸载按母本哈希逐个清理、不删用户自建文件；③ 说明书补充螺钉用法与 <code>application\CustomFeatureConfiguration.xml</code> 依赖说明；④ 快捷打孔沿用连续指定点（SuperPoint）用法，更新对应说明。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.7<br>Htet工具 v2.5.0 + 格式转换 v2.1.3</td>
+          <td>2026-11-14</td>
+          <td>① 「安装前必读」补充两条：先解压到固定文件夹再安装（安装器不复制文件，包解到哪里、哪里就是安装目录，解到临时目录重启后失效）；NX 位于 <code>C:\Program Files</code> 等受保护目录时需以管理员身份运行安装器。② 安装说明补充「包根即安装目录」的说明。③ 仅文档与版本号变化，功能代码不变。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.6<br>Htet工具 v2.5.0 + 格式转换 v2.1.3</td>
+          <td>2026-11-14</td>
+          <td>① 子目录 <code>批量导入导出</code> 更名为 <code>格式转换</code>（菜单内容不变）；升级安装时自动移除注册文件里指向旧目录的行、只写入新目录行，卸载时新旧名一并清理，不会把旧行插回；② <code>使用说明.html</code> 合并到包根，两个子目录不再放副本；子目录的 <code>install.bat</code> / <code>uninstall.bat</code> 双击即可独立安装或卸载本模块；③ 删除 <code>Htet工具\</code> 下与根重复的 <code>NX便捷功能包.exe</code> 与 <code>installer_gui.cs</code> 源码；④ 仅文档、路径与版本号变化，功能代码不变。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.5<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.3</td>
+          <td>2026-11-14</td>
+          <td>说明书新增第 00 节「安装前必读」，并补齐格式转换（弹窗标题、方向排序、打开选项、停止与进度窗、并发 1~6）与自动出图（原「批量出图」更名、模板目录自动解析）的说明；仅文档与版本号变化，功能代码同 v3.2.4。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.4<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.3</td>
+          <td>2026-11-13</td>
+          <td>① 自动出图的 A0 图纸模板目录不再写死（原硬编码路径已移除），改为按 NX 报告的安装根动态解析：优先 <code>Htet_autodwg.py</code> 顶部 <code>MANUAL_NX_TEMPLATE_DIR</code>（留空即自动），其次进程环境 <code>UGII_BASE_DIR</code> / <code>UGII_ROOT_DIR</code>，再次 <code>NXOpen.Session.GetEnvironmentVariable</code> 报告的同一变量，统一拼 <code>DRAFTING\templates\Drawing-A0-Size2D-template.prt</code>；找不到时报错列出已尝试路径与配置办法（简/繁/英三语）；② 菜单转码码页改为跟随<strong>系统默认 locale</strong>（<code>GetSystemDefaultLCID</code> → <code>CultureInfo.TextInfo.ANSICodePage</code>），不再取即时 <code>GetACP()</code> 或用户区域——系统区域变更未重启时 LCID 可能滞后，正是 NX 实际解码所依据的值；安装日志记录 <code>sys_default_lcid</code> / <code>lcid_codepage</code> / <code>lcid_locale</code> / <code>sys_codepage</code> / <code>cp_reason</code>，两者不一致时控制台明确提示；③ <code>-Scope Process</code> 测试参数生效：Htet 安装器在该模式下只写进程环境、不写用户级 <code>UGII_USER_DIR</code> 与状态文件，批量安装器不清理用户级变量，便于隔离核验。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.3<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.3</td>
+          <td>2026-11-13</td>
+          <td>① 菜单编码改为跟随<strong>系统 ANSI 代码页（ACP）</strong>：三个安装器不再按界面语言或 <code>UGII_LANG</code> 选 936/950/1252，而是统一取系统 ACP 写盘；<code>lang\</code> 母本保持 UTF-8 无 BOM 只读，每次安装从母本转码生成目标 <code>.men</code>，写完按同一 ACP 回读逐字校验，不一致即失败；② <code>-AllowCodePageFallback</code> 保持严格语义：严格模式下系统码页表示不了的字符（如 CP950 下的「转」）直接失败并列出缺字，不静默替换为 <code>?</code>；③ 卸载修复：从解压副本目录执行也能按记录内容清掉两个模块的注册行；清单用后即消费，重复卸载幂等，<code>custom_dirs.dat</code> 逐字节回到安装前基线；<code>UGII_USER_DIR</code> 无记录且不属于本插件时保持 skip；④ 批量导入导出模块源码同步至最新开发版，保留 v3.2.2 的 <code>.bak</code> 覆盖语义。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.2<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.3</td>
+          <td>2026-11-13</td>
+          <td>① 覆盖模式新增保护：<code>同名檔案已存在時 = 覆盖</code> 时，覆盖前先把原产物复制为同名 <code>.bak</code>（已存在同名 <code>.bak</code> 则覆盖该 <code>.bak</code>），再写临时文件原子替换；备份失败即中止覆盖，原文件保持不动；② 停止/回滚只删本次生成的产物，<strong>不删 <code>.bak</code></strong>；③ 导入侧（STEP/IGES/Parasolid 另存为 <code>.prt</code>）采用同一口径：覆盖前备份同名 <code>.bak</code>，失败中止，回滚用 <code>.bak</code> 还原；④ 批量导入导出升为 v2.1.3，说明文档新增第 8 节「覆盖与 .bak 备份」，写明位置、命名与清理方式（搜索 <code>*.bak</code> 手动删除）。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.1<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.2</td>
+          <td>2026-11-13</td>
+          <td>① 修复按钮重名：「逐个实体出图」在 <code>lang\zh_cn|zh_tw|en</code> 与 <code>startup\</code> 下的 8 个 <code>.men</code> / <code>.tbr</code> 恢复为「逐个实体出图 / 逐個實體出圖 / Step-by-step drawing」，与「自动出图」区分开，按钮 ID、图标、<code>ACTIONS</code> 均不变；② 说明口径统一：文档中「批量文件 → 批量导入」「批量导入 / 格式转换」等指向不存在入口的表述全部改为「批量文件 → 格式转换」，<code>install.ps1</code> 安装完成提示同步；③ 移除未被任何 <code>.men</code> / <code>.tbr</code> 引用的 <code>batch_import.bmp</code>，<code>batch_import.py</code> 仅作导入函数库保留（由格式转换调用，无独立入口）；④ 三份说明文档同源同哈希，并补齐 v3.1.6 的菜单乱码根因修复条目。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.2.0<br>Htet工具 v2.5.0 + 批量导入导出 v2.1.2</td>
+          <td>2026-11-13</td>
+          <td>① 「批量出图」按钮改名「自动出图」，出图引擎换为 <code>Htet_autodwg.py</code>：多选实体后每实体生成三视图（主视/侧视/俯视），所有组横向排在<strong>同一张图纸</strong>上，主视图标长/宽、俯视图标厚，一位小数；② 新增前置预检与显式提示（未打开部件、无实体、A0 模板缺失、已有实例在跑），结束弹汇总，日志写 <code>logs\Htet_autodwg.log</code>，单实例锁 <code>Htet_autodwg.lock</code>；③ 旧三视图出图整套下线并归档（<code>Htet_auto_drawing.py</code> / <code>.dlx</code> 不再随包，安装器完整性清单同步调整）；④ 本功能为 NX 内部 journal，<strong>不依赖 AutoCAD / accoreconsole / .NET</strong>；⑤ <code>Htet工具</code> 升为 v2.5.0。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.1.6<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.2</td>
+          <td>2026-11-12</td>
+          <td>① 修复菜单乱码根因：转码码页改为<strong>按界面语言定</strong>（<code>zh_cn</code>→CP936、<code>zh_tw</code>→CP950、<code>en</code>→CP1252），不再用 <code>Encoding.Default</code>；<code>lang\</code> 母本只读且恒为 UTF-8 无 BOM，每次从母本转出到 <code>startup\</code>，不就地改写；写完按目标码页回读逐字校验，不一致即失败；② 目标码页无法表示的字符默认严格报错并列出缺字（退出码非 0），可用 <code>-AllowCodePageFallback</code> 按字回退；③ 装完自检把实际安装路径、码页、逐文件校验结果写入 <code>%TEMP%</code> 日志，自检失败退出码非 0；④ <code>custom_dirs.dat</code> 规范化为「梅雷 <code>D:\ngll_tool</code> + 本包安装目录两行」：工作区、<code>D:\Wong\nx_step_export</code>、<code>_release</code> 构建输出行移走；改动前整文件备份（<code>.nxfull.bak</code>，已存在则加时间戳），被移走行按原始字节、原位置、原编码记入 <code>%LOCALAPPDATA%\NX便捷功能包\removed_lines.txt</code>，卸载时按原位置插回，与装前逐字节一致并恢复只读属性；空行、注释、路径不存在等识别不出的行一律原样保留并记日志；⑤ 安装与卸载写 <code>custom_dirs.dat</code> 改为纯字节追加与字节级删除，不再整文件转码（梅雷行与本插件历史行编码不同也不会被改动）；⑥ 修复两个子安装器共用一个转码状态变量、<code>.men</code> 回退后自检误报 mismatch 的判定缺陷。</td>
+        </tr>
+        <tr>
+          <td>NX便捷功能包 v3.1.5<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.2</td>
+          <td>2026-11-12</td>
+          <td>① 移除「打开上次导入结果」入口及相关菜单项，<code>startup\open_last_import.py</code> 不再随包部署，安装器完整性清单同步去掉，批量文件子级联只保留「格式转换」；② 格式转换为 <code>stp/igs→prt</code>、<code>x_t/x_b→prt</code> 方向新增「转换成功后可选择打开结果」：整批结束后询问一次是否在当前会话打开本批成功的 .prt，前台完成汇总后询问、后台等批次结束再询问，导出方向（prt→stp/igs）不出现该询问；③ <code>批量导入导出</code> 升为 v2.1.2。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.1.4<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.1</td>
+          <td>2026-11-12</td>
+          <td>修复繁体 Windows（CP950/Big5）被误判为「不能显示中文」而自动切英文：代码页可行性改为<strong>按语言分别判定</strong>，<code>zh_cn</code> 用简体样本、<code>zh_tw</code> 用繁体样本（含 Big5 有而 CP932 没有的 檔/產/錄，避免日文系统误判）、<code>en</code> 恒可行。CP950 下繁体 UI 默认 <code>zh_tw</code> 不提示，简体候选则回落英文并说明可手动 <code>-Lang zh_tw</code>；繁中母本在 CP950 转码后可严格往返，简中母本在 CP950 回退 GBK(936)。安装日志新增 <code>can_zh_cn</code> / <code>can_zh_tw</code> / <code>probe</code> / <code>candidate</code> / <code>feasible</code> 字段。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.1.3<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.1</td>
+          <td>2026-11-12</td>
+          <td>安装器新增系统代码页检测：启动时用「中文编码再解码是否原样往返」判定本机 ANSI 代码页能否表示中文。不能表示时（如日文 932、西欧 1252）明确提示「中文菜单会乱码，建议使用英文界面」，并把界面语言默认落到 <code>lang\en</code>，仍可用 <code>-Lang zh_cn</code> 手动改回；能表示中文时（936 等）不提示。检测结果与语言选择（代码页、能否中文、最终语言、是否自动切换、来源）写入 <code>%TEMP%\NX便捷功能包_install.log</code>。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.1.2<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.1</td>
+          <td>2026-11-12</td>
+          <td>修复卸载器单行注册文件的处理缺陷：<code>custom_dirs.dat</code> 只有一行时，行拆分函数返回值被 PowerShell 展开成字节数组，调用方 <code>foreach</code> 按字节迭代，导致整行被写成「一个字符一行」。根卸载器与两个子模块的 install / uninstall / restore_registrations 同步修正；两个插件都安装后按任意顺序卸载，<code>custom_dirs.dat</code> 均可逐字还原。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.1.1<br>Htet工具 v2.4.2 + 批量导入导出 v2.1.1</td>
+          <td>2026-11-12</td>
+          <td>修复菜单中文乱码：<code>.men</code>/<code>.tbr</code> 由 NX 按本机 ANSI 代码页读取，上一版误存为 UTF-8。现包内保留 UTF-8 母本，安装时按目标机系统代码页（<code>Encoding.Default</code>）现场转码 <code>startup\</code> 与三语 <code>lang\</code>，可重复执行；不可表示中文的代码页回退 GBK。回归判据同步改为「按目标代码页转码可无损还原」，不再以 UTF-8 为合格标准。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.1.0<br>Htet工具 v2.4.1 + 批量导入导出 v2.1.0</td>
+          <td>2026-11-12</td>
+          <td>① 批量菜单由「批量导入 / 批量导出」两入口合并为「格式转换」单入口，8 份 .men/.tbr 收成 <code>FORMAT_CONVERT</code>，三语为 格式转换 / 格式轉換 / Format Convert；② 转换支持 5 个方向（prt→stp、prt→igs、stp/igs→prt、x_t/x_b→prt、任意→stp/igs）及 x_t→stp / x_t→igs 两个细分方向；③ 新增菜单项「打开上次导入结果」（<code>open_last_import.py</code>），一次打开上次导入或 →prt 转换的全部结果（该入口已于 v3.1.5 移除）；④ 并发上限由 1~4 改为 1~6；⑤ Htet 出图与语言包按新排版算法改造，<code>application\</code> 与 <code>startup\</code> 两份同哈希；⑥ 安装器完整性清单加入 <code>open_last_import.py</code>（v3.1.5 起同步移除）。</td>
+        </tr>
+
+        <tr>
+          <td>NX便捷功能包 v3.0.0<br>Htet工具 v2.4.0 + 批量导入导出 v2.0.0</td>
+          <td>2026-11-12</td>
+          <td>① 两个插件合并为单一交付包：包根 <code>NX便捷功能包\</code> 下保留 <code>Htet工具\</code> 与 <code>批量导入导出\</code> 两个子模块，根上 7 个外壳文件（exe、install / uninstall 的 .bat 与 .ps1、version.txt、使用说明.html）；② 一次安装：只选一次 NX 目录与语言，根外壳依次调用两个子模块的安装脚本，<code>custom_dirs.dat</code> 各追加一行（共两行），安装前先清理可识别的旧版行；③ 一次卸载：根 <code>uninstall.bat</code> 依次调用两个子卸载器，只删各自那一行；④ htet工具改为颜色 / 显示 / 图层 / 出图 / 常用工具五组共 29 项，<code>批量文件</code> 保持 2 项；⑤ 并入内测 11-11 的截图工具、公差查询、计算器、200 为工作层；⑥ 透明工具增加会话级半透明开关与视图刷新，仅显示改为按全部类型隐藏并恢复父组件；⑦ 安装器新增 <code>.vb</code> 部署、4 张图标与 <code>exefile\GongCha.exe</code> 完整性校验；⑧ 使用说明、交接记录与更新日志同步为单包口径。</td>
+        </tr>
+        <tr>
+          <td>Htet工具 v2.3.0<br>nx_step_export v2.0.0</td>
+          <td>2026-11-11</td>
+          <td>① 并入 1110update 的 13 项功能：蓝 / 棕 / 灰 / 绿 / 橙 / 紫六色、取消透明、关闭 / 打开全部图层、下一 / 上一图层、移到 255 层、打开文件所在文件夹；② 全部按项目现有薄封装改写，统一工作部件、撤销点与失败回滚；③ 选特征可自动展开为实体，改色 / 透明 / 移层可直接点特征；④ 仅显示选中只接受实体，失败自动回滚；⑤ 移层统一修正为可见可选，分层中途失败整批回滚；⑥ 菜单增至 25 项，新增 13 个图标并重绘 2 个写实图标；⑦ 产品更名 NX便捷功能包。</td>
+        </tr>
+        <tr>
+          <td>NX批量工具 v2.2.0<br>nx_step_export v2.0.0</td>
+          <td>2026-11-11</td>
+          <td>① 导入窗新增「同名处理」（跳过 / 改名 / 覆盖，默认跳过）与「输出目录」（源目录 / 指定目录），替换原「导入说明」框，提示压缩为一行。② 勾选「导入后打开」改为<strong>会话内逐个直读</strong>：每件完成即显示；日志只解析本次追加段，坏文件判失败，同名与输出目录按预演真实落盘。③ 直读进度为独立小窗：不置顶、不抢焦点、不进任务栏，可取消。④ 同名策略与输出目录写入记忆并回填，旧记忆缺项按默认值兜底。⑤ 后台「仅生成文件」路径零退化。</td>
+        </tr>
+        <tr>
+          <td>NX批量工具 v2.2.0<br>nx_step_export v2.0.0</td>
+          <td>2026-11-10</td>
+          <td>① 选择窗、确认清单、进度窗均可最小化，不再是置顶窗；点确定后进度窗主动置前一次，之后可点走/最小化，非常驻置顶；② 勾选「导入后打开」时本批所有成功项都在 NX 中打开（转换产物 + 直接打开的 <code>.prt</code>），按选择顺序、不重复，失败/跳过不打开；③ 覆盖导出不再生成 <code>.bak</code>，改同目录临时文件 + 原子替换，只读自动清只读、被占用保留旧文件并报失败；④ 进度窗三条关闭路径（NX 退出 / 同插件再启动 / 手动关闭或取消）都会清理本次临时目录，启动时顺带清扫遗留目录；⑤ 后台执行默认并发 2（1~6 可调），期间 NX 前台可继续使用；⑥ 新增「快捷打孔」：选平面并添加孔中心，批量打普通腰孔 / 台阶沉头腰孔，支持 M3–M12 螺钉预设；安装器校验并部署 <code>Quickhole.py</code> / <code>Quickhole.dlx</code> 与 <code>Htet_hole.bmp</code>。</td>
+        </tr>
+        <tr>
+          <td>NX批量工具 v2.2.0<br>nx_step_export v2.0.0</td>
+          <td>2026-11-08</td>
+          <td>① 导入/导出三语统一命名；② 导入改追加显示（AllowAdditional）并统一补显示，选择窗支持目录树、多选、清单与移除确认；③ 出图前抑制视图更新、切实体后仅目标可见再刷新，修复漏图/叠图/空白；④ 脚本/按钮/图标统一 <code>Htet_*</code>，旧数据兼容；⑤ 12 张 24×24 图标重绘；⑥ 改色/半透明/移层后清空选中；⑦ 合并原三份说明。</td>
+        </tr>
+        <tr><td>v2.1.0</td><td>2026-11-03</td><td>新增布局/间距/幅面选项；单页布局改流式装箱，放不下按 1000 mm 扩图；结束后进制图并停第一页。</td></tr>
+        <tr><td>v2.0.1</td><td>2026-11-03</td><td>出图选择对话框改三语母本，安装按语言写入 application\；旧 .dlx 备份 <code>.nxbat.bak</code>，卸载恢复。</td></tr>
+        <tr><td>v2.0.0</td><td>2026-11-03</td><td>菜单改两级；STEP 导出迁至 nx_step_export；出图改 430×390 组位、1 主视 + 2 投影；修正比例读回与越界自检。</td></tr>
+        <tr><td>nx_step_export v2.0.0</td><td>2026-11-05</td><td>新增批量导入（多格式、各自部件、逐文件日志、不覆盖/保存）；新增「批量文件」工具条。</td></tr>
+        <tr><td>v1.9.x</td><td>2026-11-02</td><td>只关本次新开部件；并发提示；覆盖备份留 3 份（v2.1.3 起改为覆盖前备份同名 <code>.bak</code>，见第 8 节）；日志 2 MB 轮转；选择/预览窗 DPI 自适应。</td></tr>
+        <tr><td>v1.7.x</td><td>2026-11-01</td><td>修复「勾选保存却被跳过」；无权限目录提示；资源母本统一 UTF-8，安装按 ANSI 转码。</td></tr>
+        <tr><td>v1.5.x</td><td>2026-10-31</td><td>预览逐行覆盖与全选；未保存修改可勾选保存；导出后恢复显示/工作部件。</td></tr>
+        <tr><td>v1.4 及更早</td><td>2026-10-29 起</td><td>只导可见图层；按磁盘 .prt 导出；空结果重试与删除；菜单挂帮助之前；安装注册 custom_dirs.dat 只补/删本行。</td></tr>
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <span>NX便捷功能包 使用说明 · 自 2026-11-08 起以本文件为准（替代旧版三份说明）</span>
+      <span>Wong、Htet、Limulu</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

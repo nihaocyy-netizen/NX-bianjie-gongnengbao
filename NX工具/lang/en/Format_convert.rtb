@@ -1,0 +1,18 @@
+!
+! NX tools ribbon tab (format side: ImportExport)
+! NX 2506 scans .rtb only under <custom dir>\application\profiles\All\; button IDs match startup\step_export.men
+! This is the master: the installer folds this group into Htet's single NX_tools.rtb (two .rtb files with the same TITLE are NOT merged)
+!
+TITLE NX tools
+VERSION 170
+
+BEGIN_GROUP FORMAT_RBN_IMPORTEXPORT
+LABEL ImportExport
+
+    BUTTON FORMAT_CONVERT
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_openfolder
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+END_GROUP

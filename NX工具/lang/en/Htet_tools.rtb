@@ -1,0 +1,119 @@
+!
+! NX tools ribbon tab (Htet side: Colors / Display / Layers / Draw / Application)
+! NX 2506 scans .rtb only under <custom dir>\application\profiles\All\; button IDs match startup\Htet_menu.men
+! This is the master: the installer merges it with Format_convert.rtb into one NX_tools.rtb (two .rtb files with the same TITLE are NOT merged)
+!
+TITLE NX tools
+VERSION 170
+
+BEGIN_GROUP HTET_RBN_COLOR
+LABEL Colors
+
+    BUTTON Htet_red
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_black
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_yellow
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_blue
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_brown
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_gray
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_green
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_orange
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_purple
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_random
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+END_GROUP
+
+BEGIN_GROUP HTET_RBN_DISPLAY
+LABEL Display
+
+    BUTTON Htet_displayonly
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_transparent
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_notransparent
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+END_GROUP
+
+BEGIN_GROUP HTET_RBN_LAYER
+LABEL Layers
+
+    BUTTON Htet_layers
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_worklayer
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_worklayer200
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_hidealllayers
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_showalllayers
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_nextlayer
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_previouslayer
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+    BUTTON Htet_movetolayer255
+    RIBBON_STYLE MEDIUM_IMAGE_AND_TEXT
+
+END_GROUP
+
+BEGIN_GROUP HTET_RBN_DRAW
+LABEL Draw
+
+    BUTTON Htet_batch
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_stepwise
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_reset
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+END_GROUP
+
+BEGIN_GROUP HTET_RBN_APP
+LABEL Application
+
+    BUTTON Htet_sniptool
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_tolerance
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_calculator
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_quickhole
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_screw
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+END_GROUP

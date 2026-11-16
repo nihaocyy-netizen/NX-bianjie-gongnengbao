@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomFeatureLib xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CustomFeatureConfiguration_schema.xsd">
+ <CustomFeature FeatureClass="Codex.Screw.Native.V2" FeatureName="Screw" FeatureIcon="cylinder" FeatureLibrary="CodexScrewNativeCore" FeatureUILibrary="CodexScrewUI" IsWithoutBody="false" />
+ <CustomFeature FeatureClass="Codex.QuickHole.Parametric.V1" FeatureName="Quick Hole" FeatureIcon="cylinder" FeatureLibrary="QuickholeFeature" FeatureUILibrary="QuickholeParametricUI" IsWithoutBody="false" />
+</CustomFeatureLib>

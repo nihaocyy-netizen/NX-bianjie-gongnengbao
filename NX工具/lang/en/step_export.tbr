@@ -1,0 +1,13 @@
+TITLE NX tools
+VERSION 170
+DOCK TOP
+
+BEGIN_GROUP 901
+LABEL ImportExport
+
+	BUTTON FORMAT_CONVERT
+	LABEL Format Convert
+	MESSAGE Batch convert prt / step / igs / x_t with name policy, output folder and concurrency
+	BITMAP step_export.bmp
+	ACTION format_convert.py
+END_GROUP

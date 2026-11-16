@@ -1,0 +1,18 @@
+!
+! NX 工具 功能區選項卡（格式轉換側：ImportExport）
+! NX 2506 只掃描 <自訂目錄>\application\profiles\All\ 下的 .rtb；按鈕 ID 與 startup\step_export.men 一致
+! 本檔案是母本：安裝器把本組併入 Htet工具 的單一 NX_tools.rtb（同 TITLE 的兩個 rtb 不會合併）
+!
+TITLE NX 工具
+VERSION 170
+
+BEGIN_GROUP FORMAT_RBN_IMPORTEXPORT
+LABEL 匯入匯出
+
+    BUTTON FORMAT_CONVERT
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+    BUTTON Htet_openfolder
+    RIBBON_STYLE ALWAYS_LARGE_IMAGE_AND_TEXT
+
+END_GROUP

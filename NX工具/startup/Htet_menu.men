@@ -1,0 +1,211 @@
+VERSION 120
+EDIT UG_GATEWAY_MAIN_MENUBAR
+BEFORE UG_HELP
+
+CASCADE_BUTTON BATCH_TOOLS_CASCADE
+LABEL NX 工具
+
+END_OF_BEFORE
+
+MENU BATCH_TOOLS_CASCADE
+	CASCADE_BUTTON HTET_COLOR_CASCADE
+	LABEL 颜色
+	CASCADE_BUTTON HTET_DISPLAY_CASCADE
+	LABEL 显示
+	CASCADE_BUTTON HTET_LAYER_CASCADE
+	LABEL 图层
+	CASCADE_BUTTON HTET_DRAW_CASCADE
+	LABEL 出图
+	CASCADE_BUTTON HTET_APP_CASCADE
+	LABEL 常用工具
+END_OF_MENU
+
+MENU HTET_COLOR_CASCADE
+	BUTTON Htet_red
+	LABEL 红色
+	MESSAGE 把选中实体改为红色
+	BITMAP Htet_red.bmp
+	ACTIONS Htet_bodysColor186.py
+
+	BUTTON Htet_black
+	LABEL 黑色
+	MESSAGE 把选中实体改为黑色
+	BITMAP Htet_black.bmp
+	ACTIONS Htet_bodysColor216.py
+
+	BUTTON Htet_yellow
+	LABEL 黄色
+	MESSAGE 把选中实体改为黄色
+	BITMAP Htet_yellow.bmp
+	ACTIONS Htet_bodysColor6.py
+
+	BUTTON Htet_blue
+	LABEL 蓝色
+	MESSAGE 把选中实体改为蓝色
+	BITMAP Htet_blue.bmp
+	ACTIONS Htet_bodysColor211.py
+
+	BUTTON Htet_brown
+	LABEL 棕色
+	MESSAGE 把选中实体改为棕色
+	BITMAP Htet_brown.bmp
+	ACTIONS Htet_bodysColor125.py
+
+	BUTTON Htet_gray
+	LABEL 灰色
+	MESSAGE 把选中实体改为灰色
+	BITMAP Htet_gray.bmp
+	ACTIONS Htet_bodysColor44.py
+
+	BUTTON Htet_green
+	LABEL 绿色
+	MESSAGE 把选中实体改为绿色
+	BITMAP Htet_green.bmp
+	ACTIONS Htet_bodysColor36.py
+
+	BUTTON Htet_orange
+	LABEL 橙色
+	MESSAGE 把选中实体改为橙色
+	BITMAP Htet_orange.bmp
+	ACTIONS Htet_bodysColor78.py
+
+	BUTTON Htet_purple
+	LABEL 紫色
+	MESSAGE 把选中实体改为紫色
+	BITMAP Htet_purple.bmp
+	ACTIONS Htet_bodysColor164.py
+
+	BUTTON Htet_random
+	LABEL 随机改色
+	MESSAGE 给选中实体随机分配颜色
+	BITMAP Htet_random.bmp
+	ACTIONS Htet_Randomcolor.py
+END_OF_MENU
+
+MENU HTET_DISPLAY_CASCADE
+	BUTTON Htet_displayonly
+	LABEL 仅显示选中实体
+	MESSAGE 隐藏其余对象，只显示选中的实体
+	BITMAP Htet_displayonly.bmp
+	ACTIONS Htet_Displayonly.py
+
+	BUTTON Htet_transparent
+	LABEL 设为半透明
+	MESSAGE 把选中实体设为半透明
+	BITMAP Htet_transparent.bmp
+	ACTIONS Htet_transparent.py
+
+	BUTTON Htet_notransparent
+	LABEL 取消透明
+	MESSAGE 把选中实体恢复为完全不透明
+	BITMAP Htet_notransparent.bmp
+	ACTIONS Htet_Notransparent.py
+END_OF_MENU
+
+MENU HTET_LAYER_CASCADE
+	BUTTON Htet_layers
+	LABEL 一个体一个层
+	MESSAGE 每个实体放到各自独立的图层
+	BITMAP Htet_layers.bmp
+	ACTIONS Htet_Separatelayer.py
+
+	BUTTON Htet_worklayer
+	LABEL 10为工作层
+	MESSAGE 把第 10 层设为工作层
+	BITMAP Htet_worklayer.bmp
+	ACTIONS Htet_Switch10worklayer.py
+
+	BUTTON Htet_worklayer200
+	LABEL 200为工作层
+	MESSAGE 把第 200 层设为工作层
+	BITMAP Htet_Switch200worklayer.bmp
+	ACTIONS Htet_Switch200worklayer.py
+
+	BUTTON Htet_hidealllayers
+	LABEL 关闭全部图层
+	MESSAGE 关闭除工作层以外的所有图层
+	BITMAP Htet_Hidealllayers.bmp
+	ACTIONS Htet_Hidealllayers.py
+
+	BUTTON Htet_showalllayers
+	LABEL 打开全部图层
+	MESSAGE 打开所有图层（非工作层设为可见可选）
+	BITMAP Htet_Showalllayers.bmp
+	ACTIONS Htet_Showalllayers.py
+
+	BUTTON Htet_nextlayer
+	LABEL 下一图层
+	MESSAGE 切换到下一个有物体的图层（层号变大，跳过空层）
+	BITMAP Htet_Nextlayer.bmp
+	ACTIONS Htet_Nextlayer.py
+
+	BUTTON Htet_previouslayer
+	LABEL 上一图层
+	MESSAGE 切换到上一个有物体的图层（层号变小，跳过空层）
+	BITMAP Htet_Previouslayer.bmp
+	ACTIONS Htet_Previouslayer.py
+
+	BUTTON Htet_movetolayer255
+	LABEL 移到255层
+	MESSAGE 把选中对象移动到第 255 层
+	BITMAP Htet_Movetolayer255.bmp
+	ACTIONS Htet_Movetolayer255.py
+END_OF_MENU
+
+MENU HTET_DRAW_CASCADE
+	BUTTON Htet_batch
+	LABEL 自动出图
+	MESSAGE 选中实体后自动生成三视图并标注尺寸（单张图纸横向排列）
+	BITMAP Htet_batch.bmp
+	ACTIONS Htet_autodwg.py
+
+	BUTTON Htet_stepwise
+	LABEL 逐件出图
+	MESSAGE 逐个显示实体，由你手工出图
+	BITMAP Htet_batch.bmp
+	ACTIONS Htet_export_body01.py
+
+	BUTTON Htet_reset
+	LABEL 重置出图任务
+	MESSAGE 清除逐个实体出图的进度
+	BITMAP Htet_reset.bmp
+	ACTIONS Htet_reset_task.py
+END_OF_MENU
+
+MENU HTET_APP_CASCADE
+	BUTTON Htet_openfolder
+	LABEL 打开文件所在文件夹
+	MESSAGE 在资源管理器中打开当前零件所在目录
+	BITMAP Htet_Openfilefolder.bmp
+	ACTIONS Htet_Openfilefolder.py
+
+	BUTTON Htet_sniptool
+	LABEL 截图工具
+	MESSAGE 截取视图区域并复制到剪贴板
+	BITMAP Htet_Sniptool.bmp
+	ACTIONS Htet_Sniptool.vb
+
+	BUTTON Htet_tolerance
+	LABEL 公差查询
+	MESSAGE 打开公差查询手册 GongCha.exe
+	BITMAP Htet_Toleranceexe.bmp
+	ACTIONS Htet_Toleranceexe.py
+
+	BUTTON Htet_calculator
+	LABEL 计算器
+	MESSAGE 打开计算器
+	BITMAP Htet_Calculatoropen.bmp
+	ACTIONS Htet_Calculatoropen.py
+
+	BUTTON Htet_quickhole
+	LABEL 快捷打孔
+	MESSAGE 在平面上快速打圆孔、沉孔或腰孔
+	BITMAP Htet_hole.bmp
+	ACTIONS Quickhole.py
+
+	BUTTON Htet_screw
+	LABEL 添加螺钉
+	MESSAGE 在平面上快速添加圆柱头、沉头或圆头螺钉
+	BITMAP ..\bitmap\nx_screw_insert_ui.bmp
+	ACTIONS nx_screw_insert_ui.py
+END_OF_MENU

@@ -1,0 +1,13 @@
+TITLE NX 工具
+VERSION 170
+DOCK TOP
+
+BEGIN_GROUP 901
+LABEL 导入导出
+
+	BUTTON FORMAT_CONVERT
+	LABEL 格式转换
+	MESSAGE 批量转换 prt / step / igs / x_t，支持同名策略、输出目录与并发
+	BITMAP step_export.bmp
+	ACTION format_convert.py
+END_GROUP
