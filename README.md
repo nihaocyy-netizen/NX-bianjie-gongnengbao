@@ -1,4 +1,4 @@
-# NX便捷功能包-Htet-Zhang
+# NX便捷功能包-作者：Htet-Zhang and Wong
 
 适用于 Siemens NX 2506 的综合工具包，统一提供二维出图、快捷打孔、螺钉添加、颜色与显示、图层管理、常用工具和 CAD 格式转换功能。
 
