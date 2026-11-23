@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
 123
 456
 789
+=======
+﻿12345
+>>>>>>> Stashed changes
